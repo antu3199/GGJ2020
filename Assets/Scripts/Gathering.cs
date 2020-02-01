@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Gathering : MonoBehaviour {
+<<<<<<< f819f78b5afc8d69d0f1253324452b3ee0914c8c
     private UnitInventory m_unitInventory;
+=======
+>>>>>>> Gathering started
     private Collider2D m_collider;
     public LayerMask m_resourceNodes;
     private ContactFilter2D m_resourceFilter;
