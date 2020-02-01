@@ -32,6 +32,10 @@ public abstract class Occupation {
 		return m_level;
 	}
 
+	public int getMaxLevel() {
+		return EXP_CURVE.Length;
+	}
+
 	public int getCurrentExp() {
 		return m_curExp;
 	}
@@ -42,7 +46,7 @@ public abstract class Occupation {
 	}
 
 	public bool tryLevelUp() {
-		if(m_curExp >= getRequiredExpForLevel(m_level)) {
+		if(m_level < getMaxLevel() && m_curExp >= getRequiredExpForLevel(m_level)) {
 			m_curExp -= getRequiredExpForLevel(m_level);
 			m_level += 1;
 			return true;
@@ -52,6 +56,6 @@ public abstract class Occupation {
 	}
 
 	public virtual int getRequiredExpForLevel(int level) {
-		return Occupation.EXP_CURVE[level - 1];
+		return Occupation.EXP_CURVE[level];
 	}
 }
