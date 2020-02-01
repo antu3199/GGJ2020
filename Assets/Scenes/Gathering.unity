@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dropArea:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
 --- !u!50 &1155395830
 Rigidbody2D:
   serializedVersion: 4
