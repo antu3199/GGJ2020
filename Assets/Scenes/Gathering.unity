@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1155395824}
   - component: {fileID: 1155395823}
   - component: {fileID: 1155395829}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: test unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 1993613323}
   - component: {fileID: 1993613325}
   - component: {fileID: 1993613322}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: test resource node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
