@@ -20,7 +20,6 @@ public class MouseBehaviour : MonoBehaviour
 	
 	bool Drag(Draggable target){
 		//TODO add param
-
 		if (dragging != null || target == null){
 			return false;
 		}
