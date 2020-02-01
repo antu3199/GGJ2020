@@ -20,6 +20,8 @@ public class MouseBehaviour : MonoBehaviour
 	
 	bool Drag(Draggable target){
 		//TODO add param
+			Debug.Log(target.name);
+
 		if (dragging != null || target == null){
 			return false;
 		}
