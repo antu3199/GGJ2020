@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DraggableUnit : Draggable
 {
+    private UnitStats m_unitStats;
 	private UnitInventory m_unitInventory;
 	private Collider2D m_collider;
 	public LayerMask m_dropArea;
@@ -14,7 +15,8 @@ public class DraggableUnit : Draggable
 	
 	protected override void Start() {
 		base.Start();
-		m_unitInventory = GetComponent<UnitInventory>();
+        m_unitStats = GetComponent<UnitStats>();
+        m_unitInventory = GetComponent<UnitInventory>();
 		m_collider = GetComponent<Collider2D>();
 		m_dropAreaFilter = new ContactFilter2D(){};
 		m_dropAreaFilter.SetLayerMask(m_dropArea);
@@ -69,14 +71,15 @@ public class DraggableUnit : Draggable
 		Debug.Log("Now gathering " + node.resourceType);
 		m_gathering = true;
 		float gatherProgress = 0;
+        GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
 		while (m_gathering) {
-			// TODO: get gathering speed
-			gatherProgress += Time.deltaTime;
+			gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
 			int amount = (int) gatherProgress;
 			if (amount >= 1) {
+                occupation.GiveGatherExp(amount);
 				m_unitInventory.tryAddResource(node.resourceType, amount);
 				gatherProgress -= amount;
-				Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType));
+				Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
 			}
 			yield return null;
 		}
