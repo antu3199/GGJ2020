@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropArea : MonoBehaviour
-{
-	
+public class ResourceNode : DropArea {
+    public Resource resourceType;
+    
 }

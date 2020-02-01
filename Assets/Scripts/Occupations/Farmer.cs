@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropArea : MonoBehaviour
-{
-	
+public class Farmer : GatheringOccupation {
+    
 }
