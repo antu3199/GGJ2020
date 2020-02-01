@@ -76,8 +76,9 @@ public class DraggableUnit : Draggable
 			gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
 			int amount = (int) gatherProgress;
 			if (amount >= 1) {
-                occupation.GiveGatherExp(amount);
-				m_unitInventory.tryAddResource(node.resourceType, amount);
+				if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
+                    occupation.GiveGatherExp(amount);
+                }
 				gatherProgress -= amount;
 				Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
 			}
