@@ -40,14 +40,14 @@ public class EnemyMovement : MonoBehaviour {
 			else {
 				Vector2 dirToMove = m_aggro.getMovingDirection();
 				dirToMove = new Vector2(dirToMove.x * m_availableDir.x, dirToMove.y * m_availableDir.y).normalized * m_avgSpeed * UnityEngine.Random.Range(m_variance.x, m_variance.y);
-				m_rb.velocity = dirToMove;
+				m_rb.velocity = (dirToMove + m_rb.velocity)/2;
 			}
 		}
 		// In the air - continue moving forward with no random
 		else if(!m_groundCheck.isGrounded()) {
 			Vector2 dirToMove = m_aggro.getMovingDirection();
-			dirToMove = new Vector2(dirToMove.x * m_availableDir.x, dirToMove.y * m_availableDir.y).normalized * m_avgSpeed;
-			m_rb.velocity = new Vector2(dirToMove.x, m_rb.velocity.y + dirToMove.y);
+			dirToMove = new Vector2(dirToMove.x * m_availableDir.x, dirToMove.y * m_availableDir.y).normalized * m_avgSpeed * UnityEngine.Random.Range(m_variance.x, m_variance.y);
+			m_rb.velocity = new Vector2((dirToMove.x + m_rb.velocity.x)/2, m_rb.velocity.y + dirToMove.y);
 		}
 	}
 }
