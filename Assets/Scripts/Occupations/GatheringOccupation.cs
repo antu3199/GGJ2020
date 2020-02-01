@@ -6,7 +6,7 @@ public class GatheringOccupation : Occupation {
 
     // Exp gained per 1 resource gathered
     public int expPerGather = 1;
-    public static AnimationCurve gatherSpeedScaling = AnimationCurve.Linear(0.0f, 1.0f, 1.0f, 2.0f);
+    public static AnimationCurve gatherSpeedScaling = AnimationCurve.Linear(0.0f, 0.2f, 1.0f, 1.0f);
 
 	public static OccupationType GetOccupationFromResource(Resource resource) {
 		switch(resource) {
