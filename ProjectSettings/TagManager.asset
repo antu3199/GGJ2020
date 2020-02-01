@@ -15,9 +15,11 @@ TagManager:
   - 
   - Enemy
   - 
+  - Unit
+  - DropArea
   - 
   - 
-  - Resource Node
+  - 
   - 
   - 
   - 

@@ -135,9 +135,8 @@ GameObject:
   - component: {fileID: 1155395830}
   - component: {fileID: 1155395824}
   - component: {fileID: 1155395823}
-  - component: {fileID: 1155395825}
   - component: {fileID: 1155395829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: test unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0187407d55174463f822cde6d2f6da75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resourceLimit: 0
+  m_resourceLimit: 5
 --- !u!114 &1155395824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,21 +170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_totalHp: 0
   m_currentHp: 0
---- !u!114 &1155395825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155395822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f971336fcdd05674e96fd3331327ad1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_resourceNodes:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!61 &1155395826
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288,6 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf2e5b9e47fbd5419c1c13616d8ef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dropArea:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!50 &1155395830
 Rigidbody2D:
   serializedVersion: 4
