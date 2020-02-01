@@ -10,7 +10,7 @@ public class EnemyAggro : MonoBehaviour {
 	public float m_attackDelay;
 
 	// Combat Detection
-	private GameObject m_attackable;
+	public GameObject m_attackable;
 
 	public GameObject isInCombat() {
 		return m_attackable;
