@@ -43,8 +43,8 @@ public abstract class Occupation {
 
 	public bool tryLevelUp() {
 		if(m_curExp >= getRequiredExpForLevel(m_level)) {
-			m_level += 1;
 			m_curExp -= getRequiredExpForLevel(m_level);
+			m_level += 1;
 			return true;
 		}
 
