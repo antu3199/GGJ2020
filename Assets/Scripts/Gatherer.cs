@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gathering : MonoBehaviour {
+public class Gatherer : MonoBehaviour {
     private UnitInventory m_unitInventory;
     private Collider2D m_collider;
     public LayerMask m_resourceNodes;
     private ContactFilter2D m_resourceFilter;
     private Collider2D[] m_results;
     private bool m_gathering;
+    private ResourceNode m_curNode;
 
     private void Start() {
         m_unitInventory = GetComponent<UnitInventory>();
@@ -20,7 +21,7 @@ public class Gathering : MonoBehaviour {
 
     private void Update() {
         // TODO: call this when this unit is dropped instead of here and set m_gathering to false when this unit is picked up
-        CheckForNodes();
+        // CheckForNodes();
     }
 
     public void CheckForNodes() {
@@ -43,8 +44,17 @@ public class Gathering : MonoBehaviour {
         }
     }
 
+    public void StopGathering() {
+        if (m_curNode != null) {
+            Debug.Log("No longer gathering " + m_curNode.name);
+            m_curNode = null;
+        }
+        m_gathering = false;
+    }
+
     private IEnumerator GatherNode(ResourceNode node) {
-        Debug.Log(node.resourceType);
+        Debug.Log("Now gathering " + node.resourceType);
+        m_curNode = node;
         m_gathering = true;
         float gathered = 0;
         while (m_gathering) {

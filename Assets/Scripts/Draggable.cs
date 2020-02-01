@@ -7,7 +7,7 @@ public class Draggable : MonoBehaviour
 	bool dragged;
 	Rigidbody2D rb;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
 		dragged = false;
 		rb = GetComponent<Rigidbody2D>();
@@ -21,7 +21,7 @@ public class Draggable : MonoBehaviour
 		}
 	}
 
-	public bool OnDrop(){
+	public virtual bool OnDrop(){
 		//TODO add dropped object into params & interact with dropped object
 		//Debug.Log("Aah");
 		dragged = false;
@@ -29,7 +29,7 @@ public class Draggable : MonoBehaviour
 		return true;
 	}
 	
-	public bool OnDrag(){
+	public virtual bool OnDrag(){
 		//Debug.Log("Ooh");
 		dragged = true;
 		rb.isKinematic = true;
