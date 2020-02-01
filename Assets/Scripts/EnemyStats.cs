@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class UnitStats : BaseStatsBehaviour {
+public class EnemyStats : BaseStatsBehaviour {
 
 }
