@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class TowerAggro : MonoBehaviour
 {
-    List<GameObject> targets;
-    GameObject currentTarget;
+    List<EnemyStats> targets;
+    public EnemyStats currentTarget;
     public GameObject aimingPart;
     // Start is called before the first frame update
     void Start()
     {
-        targets = new List<GameObject>();
+        targets = new List<EnemyStats>();
         currentTarget = null;
+		if (aimingPart == null){
+			if ((aimingPart = transform.Find("Aiming Part").gameObject) == null)
+				Debug.Log("No aiming part found");
+		}
     }
 
     void Update()
     {
         if (currentTarget)
         {
-            aimingPart.transform.eulerAngles =  new Vector3(0, 0, PointToTarget(currentTarget));
+            aimingPart.transform.eulerAngles =  new Vector3(0, 0, PointToTarget(currentTarget.transform));
         }
     }
 
@@ -41,16 +45,21 @@ public class TowerAggro : MonoBehaviour
         {
             return;
         }
-        targets.Add(other.gameObject);
+		EnemyStats toAdd = other.GetComponent<EnemyStats>();
+		if (toAdd != null)
+			targets.Add(toAdd);
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy") || !targets.Contains(other.gameObject))
+        if (other.gameObject.layer != LayerMask.NameToLayer("Enemy"))
         {
             return;
         }
-        targets.Remove(other.gameObject);
+		EnemyStats toRemove = other.GetComponent<EnemyStats>();
+		if (toRemove)
+			targets.Remove(toRemove);
+		
     }
 
     void SortTargets()
@@ -58,14 +67,14 @@ public class TowerAggro : MonoBehaviour
         return;
     }
 
-    List<GameObject> GetTargets()
+    List<EnemyStats> GetTargets()
     {
         return targets;
     }
 
-    float PointToTarget(GameObject target)
+    float PointToTarget(Transform target)
     {
-        Vector2 diff = target.transform.position - transform.position;
+        Vector2 diff = target.position - aimingPart.transform.position;
         float angle = Mathf.Rad2Deg * Mathf.Acos(diff.x / diff.magnitude);
         return diff.y < 0 ? -angle : angle;
     }
