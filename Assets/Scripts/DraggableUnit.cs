@@ -65,6 +65,7 @@ public class DraggableUnit : Draggable {
 	}
 
 	private void StopTask() {
+        // m_anim.SetTrigger("Idle");
 		m_gathering = false;
         m_progressBar.gameObject.SetActive(false);
 		// TODO: remove from turret
@@ -72,8 +73,10 @@ public class DraggableUnit : Draggable {
 
 	private IEnumerator GatherNode(ResourceNode node) {
 		Debug.Log("Now gathering " + node.resourceType);
+        // m_anim.SetTrigger("Gather");
 		m_gathering = true;
         m_progressBar.gameObject.SetActive(true);
+        m_progressBar.SetResourceIcon(node.resourceType);
         m_progressBar.SetFillAmount(0);
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
