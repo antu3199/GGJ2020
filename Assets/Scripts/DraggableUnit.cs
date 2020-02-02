@@ -26,12 +26,6 @@ public class DraggableUnit : Draggable {
 		m_results = new Collider2D[3];
 	}
 
-	// public override bool OnDrop() {
-	// 	// Check for resource nodes or turrets
-	//  CheckForDropAreas();
-	// 	return base.OnDrop();
-	// }
-
 	public override Draggable OnDrag() {
 		StopTask();
 		return base.OnDrag();
