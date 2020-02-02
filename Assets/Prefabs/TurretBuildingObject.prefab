@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7815398948846950497}
   - component: {fileID: 7815398948846950510}
   - component: {fileID: 4953427408599129877}
-  - component: {fileID: 4953427408599129876}
   m_Layer: 0
   m_Name: TurretBuildingObject
   m_TagString: Untagged
@@ -99,18 +98,7 @@ MonoBehaviour:
   realObjectPrefab: {fileID: 7159030568441032393, guid: 3f27dc8f4a12a3942b0915de9b7158b2,
     type: 3}
   spriteRend: {fileID: 7815398948846950510}
-  followScript: {fileID: 4953427408599129876}
   goodPlacementColor: {r: 0.100138426, g: 1, b: 0, a: 0.5019608}
   badPlacementColor: {r: 1, g: 0, b: 0, a: 0.5019608}
---- !u!114 &4953427408599129876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7815398948846950509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4403007230c15df4cbf366f633fd771b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  yOffset: 0
+  canPlace: 0

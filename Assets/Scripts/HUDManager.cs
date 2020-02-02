@@ -15,6 +15,7 @@ public class HUDManager : Singleton<HUDManager>
     string tooltipCreateTurret = "Create a turret (Cost: 30 ore, 10 wood, 10 wheat)";
 
     string tooltipBuild = "Place the structure";
+    string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
 
     public HUDState hudState;
     public Text hudText;
@@ -24,6 +25,8 @@ public class HUDManager : Singleton<HUDManager>
 
     public BuildableObject wallObject;
     public BuildableObject turretObject;
+	
+	MouseBehaviour mouse;
 
 
 
@@ -32,6 +35,7 @@ public class HUDManager : Singleton<HUDManager>
     {
         hudState = HUDState.BASE;
         RefreshHUDSDisplay();
+		mouse = Camera.main.GetComponent<MouseBehaviour>();
     }
 
 
@@ -41,7 +45,11 @@ public class HUDManager : Singleton<HUDManager>
       }
 
       hudState = HUDState.BUILD;
-      Instantiate(wallObject); // Will position itself automatically
+      BuildableObject planner = Instantiate(wallObject) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  return;
+	  }
       RefreshHUDSDisplay();
     }
 
@@ -52,9 +60,22 @@ public class HUDManager : Singleton<HUDManager>
       
       hudState = HUDState.BUILD;
 
-      Instantiate(turretObject); // Will position itself automatically
+      BuildableObject planner = Instantiate(turretObject) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  return;
+	  }
       RefreshHUDSDisplay();
 
+    }
+
+    public void PressCoin() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+
+      //TODO: if can buy a coin
+      // ...
     }
 
     public void DisplayBuildWallTooltip() {
@@ -63,6 +84,10 @@ public class HUDManager : Singleton<HUDManager>
 
     public void DisplayBuildTurretTooltip() {
       hudText.text = tooltipCreateTurret;
+    }
+
+    public void DisplayCoinToolTip() {
+      hudText.text = tooltipCoin;
     }
 
     public void PointerExitIcon() {
@@ -74,6 +99,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void ResetHUDState() {
+		mouse.EndBuild();
       hudState = HUDState.BASE;
       hudText.text = "";
       RefreshHUDSDisplay();

@@ -31,6 +31,14 @@ public class UnitInventory : MonoBehaviour {
 		return countInventory() >= m_resourceLimit;
 	}
 
+	public void depositResources(SummonerInventory summonerInventory) {
+		List<Resource> keys = new List<Resource>(m_resources.Keys);
+		foreach(Resource key in keys) {
+			summonerInventory.addResource(key, m_resources[key]);
+			m_resources[key] = 0;
+		}
+	}
+
 	public void upgradeBackpack() {
 		m_resourceLimit += UnitInventory.BACKPACK_UPGRADE;
 	}

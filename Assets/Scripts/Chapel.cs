@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chapel : MonoBehaviour {
+public class Chapel : DropArea {
     private int m_donatedGold;
     [Tooltip("The required quantity of gold donated to win the game.")]
     public int m_victoryGoldAmount;
