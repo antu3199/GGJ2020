@@ -42,6 +42,7 @@ public class HUDManager : Singleton<HUDManager>
     public Text timerText;
 
     public Chapel chapel;
+    public Text winText;
 
 
     // Start is called before the first frame update
