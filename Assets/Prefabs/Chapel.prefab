@@ -191,7 +191,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1633706095
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a2a7cb0b040c0344906b7d9fcef68e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -216,7 +216,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a11ebb4d1ed0d1418e6aad1fa803a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_victoryGoldAmount: 0
+  m_costForGold:
+  - m_resource: 0
+    m_cost: 30
+  - m_resource: 1
+    m_cost: 30
+  - m_resource: 2
+    m_cost: 30
+  m_victoryGoldAmount: 100
+  spriteRend: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 2a2a7cb0b040c0344906b7d9fcef68e6, type: 3}
+  - {fileID: 21300000, guid: 486d9918ca2325847b16596d0f65cf35, type: 3}
+  - {fileID: 21300000, guid: 3a14f4663af34f64aa2d3e6fae5399e5, type: 3}
 --- !u!114 &1840379494284413435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b546facf7207749dca44fc40af834df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_chapel: {fileID: 0}
   m_entries:
   - m_resource: 2
     m_stack:
@@ -241,7 +254,7 @@ MonoBehaviour:
   - m_resource: 0
     m_stack:
       m_ui: {fileID: 0}
-      m_count: 100
+      m_count: 0
   - m_resource: 3
     m_stack:
       m_ui: {fileID: 0}
@@ -262,7 +275,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.5039419}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.28}
     oldSize: {x: 2.1, y: 0.79}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
@@ -565,7 +578,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1633706095
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 5b977e2486594ea41ac2a39f7f304c97, type: 3}
   m_Color: {r: 1, g: 0.28122345, b: 0.1273585, a: 0.49019608}

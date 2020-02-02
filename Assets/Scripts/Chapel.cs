@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Chapel : DropArea {
     [Serializable]
@@ -45,6 +46,13 @@ public class Chapel : DropArea {
 
     private void WinGame() {
         Debug.Log("Game Won");
-        // TODO
+        StartCoroutine(winGameCor());
+    }
+
+    IEnumerator winGameCor() {
+      HUDManager.Instance.winText.gameObject.SetActive(true);
+
+      yield return new WaitForSeconds(5.0f);
+      SceneManager.LoadScene("_MainMenu");
     }
 }
