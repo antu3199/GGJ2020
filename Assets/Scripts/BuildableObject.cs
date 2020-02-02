@@ -47,6 +47,8 @@ public class BuildableObject : MonoBehaviour
       GameObject newObject = Instantiate(realObjectPrefab) as GameObject;
 	  newObject.transform.position = transform.position;
       HUDManager.Instance.ResetHUDState();
+
+      MusicManager.Instance.PlaySound("lowclick");
     }
 	
 	void SetCanPlace(bool place){

@@ -9,6 +9,9 @@ public class BaseStatsBehaviour : MonoBehaviour {
 	[Tooltip("Set delay to be destroyed")]
 	public int m_delayDestroy;
 
+  public string takeDamageSound = "";
+  public int takeDamageSoundVolume = -1;
+
 	public void raiseTotalHp(int amount) {
 		m_totalHp += amount;
 	}
@@ -23,6 +26,7 @@ public class BaseStatsBehaviour : MonoBehaviour {
 
 	public void takeDamage(int amount) {
 		m_currentHp = Math.Max(m_currentHp - amount, 0);
+    MusicManager.Instance.PlaySound(takeDamageSound, takeDamageSoundVolume);
 	}
 
 	protected virtual void Update() {

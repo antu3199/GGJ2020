@@ -509,6 +509,8 @@ MonoBehaviour:
   m_totalHp: 20
   m_currentHp: 20
   m_delayDestroy: 1
+  takeDamageSound: cut
+  takeDamageSoundVolume: -1
 --- !u!114 &7366870934247904650
 MonoBehaviour:
   m_ObjectHideFlags: 0
