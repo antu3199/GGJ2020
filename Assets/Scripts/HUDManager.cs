@@ -13,9 +13,14 @@ public class HUDManager : Singleton<HUDManager>
 {
     string tooltipCreateWall = "Create a wall (Cost: 15 ore)";
     string tooltipCreateTurret = "Create a turret (Cost: 30 ore, 10 wood, 10 wheat)";
+    string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat)";
 
     string tooltipBuild = "Place the structure";
     string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
+
+    string tooltipWheat = "Create a wheat (Cost: 10 wheat)";
+    string tooltipOre = "Create a ore (Cost: 10 ore)";
+    string tooltipWood = "Create a wood (Cost: 10 wood)";
 
     public HUDState hudState;
     public Text hudText;
@@ -25,7 +30,11 @@ public class HUDManager : Singleton<HUDManager>
 
     public BuildableObject wallObject;
     public BuildableObject turretObject;
+    public BuildableObject houseObject;
 
+    public BuildableObject wheatObject;
+    public BuildableObject woodObject;
+    public BuildableObject oreObject;
 
 
     // Start is called before the first frame update
@@ -79,6 +88,8 @@ public class HUDManager : Singleton<HUDManager>
       hudText.text = tooltipCoin;
     }
 
+
+
     public void PointerExitIcon() {
       hudText.text = "";
     }
@@ -109,4 +120,72 @@ public class HUDManager : Singleton<HUDManager>
           break;
       }
     }
+
+    public void BuildHouse() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+      
+      hudState = HUDState.BUILD;
+
+      Instantiate(houseObject); // Will position itself automatically
+      RefreshHUDSDisplay();
+
+    }
+ 
+    public void DisplayHouse() {
+      hudText.text = tooltipHouse;
+    }
+
+
+    public void BuildWheat() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+      
+      hudState = HUDState.BUILD;
+
+      Instantiate(wheatObject); // Will position itself automatically
+      RefreshHUDSDisplay();
+
+    }
+ 
+    public void DisplayWheat() {
+      hudText.text = tooltipWheat;
+    }
+
+    public void BuildWood() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+      
+      hudState = HUDState.BUILD;
+
+      Instantiate(woodObject); // Will position itself automatically
+      RefreshHUDSDisplay();
+
+    }
+ 
+    public void DisplayWood() {
+      hudText.text = tooltipWood;
+    }
+
+    public void BuildOre() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+      
+      hudState = HUDState.BUILD;
+
+      Instantiate(oreObject); // Will position itself automatically
+      RefreshHUDSDisplay();
+
+    }
+ 
+    public void DisplayOre() {
+      hudText.text = tooltipOre;
+    }
+
 }
+
+
