@@ -78,6 +78,7 @@ public class DraggableUnit : Draggable {
         // m_anim.SetTrigger("Gather");
 		m_gathering = true;
         m_progressBar.gameObject.SetActive(true);
+        m_progressBar.SetResourceIcon(node.resourceType);
         m_progressBar.SetFillAmount(0);
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
