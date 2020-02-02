@@ -87,7 +87,7 @@ public class DraggableUnit : Draggable {
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
 		while (m_gathering) {
-			gatherProgress += occupation.GetGatherSpeed() * 3*Time.deltaTime;
+			gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
 			int amount = (int) gatherProgress;
             if (amount >= 1) {
                 if (!m_unitInventory.inventoryFull()) {
