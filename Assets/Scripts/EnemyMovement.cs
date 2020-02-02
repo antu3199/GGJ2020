@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour {
 	public Vector2 m_variance;
 
 	private Rigidbody2D m_rb;
+	private bool is_jumping;
 
 	void Start() {
 		m_rb = GetComponent<Rigidbody2D>();
@@ -33,8 +34,8 @@ public class EnemyMovement : MonoBehaviour {
 		else if(m_groundCheck == null || m_groundCheck.isGrounded()){
 			m_rb.constraints &= ~RigidbodyConstraints2D.FreezePositionX;	
 			// Jump
-			if(m_jumpForce > 0 && UnityEngine.Random.Range(0f, 1f) <= m_jumpChance) {
-				m_rb.AddForce(new Vector2(0, m_jumpForce));
+			if(m_jumpForce > 0 && UnityEngine.Random.Range(0f, 1f) <= m_jumpChance && !is_jumping) {
+				StartCoroutine(Jump());
 			}
 			// Walk
 			else {
@@ -49,5 +50,28 @@ public class EnemyMovement : MonoBehaviour {
 			dirToMove = new Vector2(dirToMove.x * m_availableDir.x, dirToMove.y * m_availableDir.y).normalized * m_avgSpeed * UnityEngine.Random.Range(m_variance.x, m_variance.y);
 			m_rb.velocity = new Vector2((dirToMove.x + m_rb.velocity.x)/2, m_rb.velocity.y + dirToMove.y);
 		}
+	}
+
+	public bool isInCombat() {
+		return m_aggro.isInCombat();
+	}
+
+	public bool isGrounded() {
+		return m_groundCheck.isGrounded();
+	}
+
+	public bool isJumping() {
+		return is_jumping;
+	}
+
+	IEnumerator Jump() {
+		is_jumping = true;
+		float time = 0;
+		while(time < 0.15f) {
+			time += Time.fixedDeltaTime;
+			m_rb.AddForce(new Vector2(0, m_jumpForce));
+			yield return new WaitForFixedUpdate();
+		}
+		is_jumping = false;
 	}
 }
