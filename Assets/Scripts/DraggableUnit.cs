@@ -64,16 +64,25 @@ public class DraggableUnit : Draggable {
 		}*/
 	}
 
-	private void StopTask() {
+	public void StopTask() {
+        // m_anim.SetTrigger("Idle");
 		m_gathering = false;
+        if (m_curNode != null) {
+            m_curNode.RemoveGatherer(this);
+            m_curNode = null;
+        }
         m_progressBar.gameObject.SetActive(false);
 		// TODO: remove from turret
 	}
 
 	private IEnumerator GatherNode(ResourceNode node) {
 		Debug.Log("Now gathering " + node.resourceType);
+        // m_anim.SetTrigger("Gather");
 		m_gathering = true;
+        m_curNode = node;
+        node.AddGatherer(this);
         m_progressBar.gameObject.SetActive(true);
+        m_progressBar.SetResourceIcon(node.resourceType);
         m_progressBar.SetFillAmount(0);
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
@@ -82,6 +91,11 @@ public class DraggableUnit : Draggable {
 			int amount = (int) gatherProgress;
             if (amount >= 1) {
                 if (!m_unitInventory.inventoryFull()) {
+                    amount = node.Harvest(amount);
+                    if (amount == 0) {
+                        StopTask();
+                        break;
+                    }
                     if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
                         occupation.GiveGatherExp(amount);
                     }
