@@ -224,7 +224,7 @@ MonoBehaviour:
   - m_resource: 2
     m_cost: 30
   m_victoryGoldAmount: 100
-  spriteRend: {fileID: 0}
+  spriteRend: {fileID: 1840379494284413439}
   sprites:
   - {fileID: 21300000, guid: 2a2a7cb0b040c0344906b7d9fcef68e6, type: 3}
   - {fileID: 21300000, guid: 486d9918ca2325847b16596d0f65cf35, type: 3}
