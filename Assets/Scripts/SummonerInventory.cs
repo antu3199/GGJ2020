@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class SummonerInventory : MonoBehaviour {
+public class SummonerInventory : Singleton<SummonerInventory> {
 	[Serializable]
 	public class ResourceStack {
 		public Text m_ui;
