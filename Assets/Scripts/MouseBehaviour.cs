@@ -75,7 +75,12 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public void PointedAtObject(GameObject thing){
-		if (thing != null && ((1 << thing.layer) & dontClick) == 0) {
+        if (thing == null)
+        {
+            pointing = thing;
+            return;
+        }
+		if (((1 << thing.layer) & dontClick) == 0) {
 			pointing = thing;
 			Debug.Log("Pointed at " + thing.name);
 		}
