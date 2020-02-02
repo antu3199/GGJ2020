@@ -16,7 +16,6 @@ public class MouseBehaviour : MonoBehaviour
 	Draggable dragging;
 	Action action = Action.IDLE;
 	BuildableObject toBuild;
-	public BuildableObject b;
 	Vector2 targetPos;
     // Update is called once per frame
     void Update()
