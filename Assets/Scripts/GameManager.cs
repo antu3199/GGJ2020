@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
 	IEnumerator intermissionPhase() {
 		m_countdown = (int)m_intermissionSeconds;
 		while(m_countdown > 0) {
-			Debug.Log(m_countdown);
 			yield return new WaitForSeconds(1);
 			m_countdown--;
 		}
@@ -88,7 +87,6 @@ public class GameManager : MonoBehaviour
 
 		m_countdown = (int)m_roundSeconds;
 		while(m_countdown > 0) {
-			Debug.Log(m_countdown);
 			yield return new WaitForSeconds(1);
 			m_countdown--;
 		}
