@@ -7,6 +7,7 @@ public class DraggableUnit : Draggable {
     public ProgressBar m_progressBar;
 	private UnitStats m_unitStats;
 	private UnitInventory m_unitInventory;
+	// public GroundedCheck m_groundCheck;
 	private Collider2D m_collider;
     [Tooltip("The layers considered DropAreas.")]
 	public LayerMask m_dropArea;
@@ -25,22 +26,22 @@ public class DraggableUnit : Draggable {
 		m_results = new Collider2D[3];
 	}
 
-	public override bool OnDrop() {
-		// Check for resource nodes or turrets
-		CheckForDropAreas();
-		return base.OnDrop();
-	}
-
 	public override Draggable OnDrag() {
 		StopTask();
 		return base.OnDrag();
 	}
 
-	private void CheckForDropAreas() {
-		// Check for collisions with DropAreas
+    private void OnTriggerEnter2D(Collider2D other) {
+        // m_groundCheck.isGrounded
+        CheckForDropAreas();
+    }
+
+    // Checks for nearby DropAreas and uses them if there are any, returning true if successful, false if there are no DropAreas
+	private bool CheckForDropAreas() {
 		int numHits = m_collider.OverlapCollider(m_dropAreaFilter, m_results);
 		if (numHits == 1) {
 			UseDropArea(m_results[0].GetComponent<DropArea>());
+            return true;
 		} else if (numHits > 1) {
 			// If this gatherer is touching more than one drop area, use the closest one
 			Collider2D closestDropArea = m_results[0];
@@ -53,13 +54,17 @@ public class DraggableUnit : Draggable {
 				}
 			}
 			UseDropArea(closestDropArea.GetComponent<DropArea>());
+            return true;
 		}
+        return false;
 	}
 
 	private void UseDropArea(DropArea dropArea) {
 		if (dropArea is ResourceNode) {
 			StartCoroutine(GatherNode(dropArea.GetComponent<ResourceNode>()));
-		} /*else if (dropArea is ) {
+		} else if (dropArea is Chapel) {
+            m_unitInventory.depositResources(dropArea.GetComponent<SummonerInventory>());
+        } /*else if (dropArea is ) {
 			// TODO dropping on turrets
 		}*/
 	}
@@ -87,26 +92,27 @@ public class DraggableUnit : Draggable {
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
 		while (m_gathering) {
-			gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
-			int amount = (int) gatherProgress;
-            if (amount >= 1) {
-                if (!m_unitInventory.inventoryFull()) {
-                    amount = node.Harvest(amount);
-                    if (amount == 0) {
-                        StopTask();
-                        break;
-                    }
-                    if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
-                        occupation.GiveGatherExp(amount);
-                    }
-                    gatherProgress -= amount;
-                    Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
-                } else {
-                    // If inventory is full, cap gathering progress
-                    gatherProgress = 1;
+            if (!m_unitInventory.inventoryFull()) {
+                gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
+                int amount = (int) gatherProgress;
+                if (amount >= 1) {
+                        amount = node.Harvest(amount);
+                        if (amount == 0) {
+                            StopTask();
+                            break;
+                        }
+                        if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
+                            occupation.GiveGatherExp(amount);
+                        }
+                        gatherProgress -= amount;
+                        Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
                 }
+                m_progressBar.SetFillAmount(gatherProgress);
             }
-            m_progressBar.SetFillAmount(gatherProgress);
+            if (m_unitInventory.inventoryFull()) {
+                // If inventory is full, cap gathering progress
+                m_progressBar.SetFillAmount(1);
+            }
 			yield return null;
 		}
 	}
