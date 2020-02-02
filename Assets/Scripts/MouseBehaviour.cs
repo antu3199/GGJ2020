@@ -31,9 +31,6 @@ public class MouseBehaviour : MonoBehaviour
 				action = Action.IDLE;
 			}
 		}
-		else if (Input.GetAxis("Jump") > 0){
-			BeginBuild(Instantiate(b) as BuildableObject);
-		}
     }
 	
 	bool Drag(Draggable target){
