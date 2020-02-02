@@ -58,9 +58,10 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public void PointedAtObject(GameObject thing){
-		pointing = thing;
-		if (thing != null)
+		if (thing != null && thing.layer != LayerMask.NameToLayer("DropArea")) {
+			pointing = thing;
 			Debug.Log("Pointed at " + thing.name);
+		}
 	}
 	
 	public bool IsDragging(){
