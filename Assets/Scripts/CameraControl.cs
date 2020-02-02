@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 	
 	[Tooltip("The leftmost the camera can move on the x-axis.")]
-	public float m_leftBound;
+	public float leftBound;
 	[Tooltip("The rightmost the camera can move on the x-axis.")]
-	public float m_rightBound;
+	public float rightBound;
 	[Tooltip("The lowest the camera can move on the y-axis.")]
 	public float m_lowerBound;
 	[Tooltip("The highest the camera can move on the y-axis.")]
@@ -16,6 +16,7 @@ public class CameraControl : MonoBehaviour {
 	public float m_scrollAreaWidth;
 	public float m_scrollSpeed;
 	private Camera m_cam;
+	public CloudController m_cloudController;
 
 	private void Start() {
 		m_cam = Camera.main;
@@ -28,20 +29,21 @@ public class CameraControl : MonoBehaviour {
 		// X-axis movement
 		if (mousePos.x <= m_scrollAreaWidth) {
 			newPos += Vector3.left * m_scrollSpeed * Time.deltaTime;
-			newPos.x = Mathf.Max(newPos.x, m_leftBound);
+			newPos.x = Mathf.Max(newPos.x, leftBound);
 		} else if (mousePos.x >= Screen.width - m_scrollAreaWidth) {
 			newPos += Vector3.right * m_scrollSpeed * Time.deltaTime;
-			newPos.x = Mathf.Min(newPos.x, m_rightBound);
+			newPos.x = Mathf.Min(newPos.x, rightBound);
 		}
 
 		// Y-axis movement
 		if (mousePos.y <= m_scrollAreaWidth) {
 			newPos += Vector3.down * m_scrollSpeed * Time.deltaTime;
-			newPos.y = Mathf.Max(newPos.y, m_leftBound);
+			newPos.y = Mathf.Max(newPos.y, m_lowerBound);
 		} else if (mousePos.y >= Screen.height - m_scrollAreaWidth) {
 			newPos += Vector3.up * m_scrollSpeed * Time.deltaTime;
-			newPos.y = Mathf.Min(newPos.y, m_rightBound);
+			newPos.y = Mathf.Min(newPos.y, m_upperBound);
 		}
+		m_cloudController.SetCameraScroll(newPos.x - m_cam.transform.position.x);
 		m_cam.transform.position = newPos;
 	}
 }
