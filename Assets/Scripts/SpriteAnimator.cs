@@ -16,6 +16,8 @@ public class SpriteAnimator : MonoBehaviour
     public bool isPlaying {get; set;}
     public int frameIndex{get; set;}
 
+    float repeatDelayCounter = 0;
+
     float animTime;
 
     void Start() {
@@ -28,15 +30,31 @@ public class SpriteAnimator : MonoBehaviour
       if (isPlaying) {
         animTime += Time.deltaTime;
         if (animTime >= transitionTime) {
-          if (!repeat && frameIndex + 1 == sprites.Count) {
-            Pause();
-            return;
+          if ( frameIndex + 1 == sprites.Count) {
+            if (!repeat) {
+              Pause();
+              return;
+            }
+
+            repeatDelayCounter += Time.deltaTime;
+            if (repeatDelayCounter >= repeatDelay) {
+              repeatDelayCounter = 0;
+              frameIndex = -1;
+              nextFrame();
+            }
+
+          } else {
+            nextFrame();
           }
-          animTime = 0;
-          frameIndex = (frameIndex + 1) % sprites.Count;
-          spriteRend.sprite = sprites[frameIndex];
+         
         }
       }
+    }
+
+    private void nextFrame() {
+        animTime = 0;
+        frameIndex = (frameIndex + 1) % sprites.Count;
+        spriteRend.sprite = sprites[frameIndex];
     }
 
 
@@ -48,10 +66,15 @@ public class SpriteAnimator : MonoBehaviour
       isPlaying = false;
     }
 
-    public void Reset() {
+    public void ResetAnim() {
       frameIndex = 0;
       animTime = 0;
       spriteRend.sprite = sprites[frameIndex];
+      repeatDelayCounter = 0;
+    }
+
+    public float GetTime() {
+      return sprites.Count * transitionTime;
     }
 
 }

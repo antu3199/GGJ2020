@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Resource Nodes
+    uniqueID: 1633706095
+    locked: 0
+  - name: Units
+    uniqueID: 3570090607
+    locked: 0
+  - name: World UI
+    uniqueID: 2026436295
+    locked: 0

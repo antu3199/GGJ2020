@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DraggableUnit : Draggable
-{
+public class DraggableUnit : Draggable {
+    [Tooltip("Reference to the gathering progress bar.")]
+    public ProgressBar m_progressBar;
 	private UnitStats m_unitStats;
 	private UnitInventory m_unitInventory;
 	private Collider2D m_collider;
+    [Tooltip("The layers considered DropAreas.")]
 	public LayerMask m_dropArea;
 	private ContactFilter2D m_dropAreaFilter;
 	private Collider2D[] m_results;
@@ -63,25 +65,37 @@ public class DraggableUnit : Draggable
 	}
 
 	private void StopTask() {
+        // m_anim.SetTrigger("Idle");
 		m_gathering = false;
+        m_progressBar.gameObject.SetActive(false);
 		// TODO: remove from turret
 	}
 
 	private IEnumerator GatherNode(ResourceNode node) {
 		Debug.Log("Now gathering " + node.resourceType);
+        // m_anim.SetTrigger("Gather");
 		m_gathering = true;
+        m_progressBar.gameObject.SetActive(true);
+        m_progressBar.SetResourceIcon(node.resourceType);
+        m_progressBar.SetFillAmount(0);
 		float gatherProgress = 0;
 		GatheringOccupation occupation = (GatheringOccupation) m_unitStats.GetOccupation(GatheringOccupation.GetOccupationFromResource(node.resourceType));
 		while (m_gathering) {
 			gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
 			int amount = (int) gatherProgress;
-			if (amount >= 1) {
-				if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
-					occupation.GiveGatherExp(amount);
-				}
-				gatherProgress -= amount;
-				Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
-			}
+            if (amount >= 1) {
+                if (!m_unitInventory.inventoryFull()) {
+                    if (m_unitInventory.tryAddResource(node.resourceType, amount)) {
+                        occupation.GiveGatherExp(amount);
+                    }
+                    gatherProgress -= amount;
+                    Debug.Log(node.resourceType + " gathered. unit now has " + m_unitInventory.getResource(node.resourceType) + "\ngather speed is " + occupation.GetGatherSpeed() + ". exp is " + occupation.getCurrentExp());
+                } else {
+                    // If inventory is full, cap gathering progress
+                    gatherProgress = 1;
+                }
+            }
+            m_progressBar.SetFillAmount(gatherProgress);
 			yield return null;
 		}
 	}
