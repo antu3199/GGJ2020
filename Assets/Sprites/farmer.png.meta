@@ -32,6 +32,12 @@ TextureImporter:
   - first:
       213: 2006816110344190294
     second: farmer_4
+  - first:
+      213: 2157199615288717300
+    second: farmer_5
+  - first:
+      213: 5003073306664929281
+    second: farmer_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -228,6 +234,27 @@ TextureImporter:
       bones: []
       spriteID: 659b89aae94a9db10800000000000000
       internalID: 2006816110344190294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108800d3aac7e6540800000000000000
+      internalID: 5003073306664929281
       vertices: []
       indices: 
       edges: []

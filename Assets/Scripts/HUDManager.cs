@@ -13,9 +13,14 @@ public class HUDManager : Singleton<HUDManager>
 {
     string tooltipCreateWall = "Create a wall (Cost: 15 ore)";
     string tooltipCreateTurret = "Create a turret (Cost: 30 ore, 10 wood, 10 wheat)";
+    string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat)";
 
     string tooltipBuild = "Place the structure";
     string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
+
+    string tooltipWheat = "Create a wheat (Cost: 10 wheat)";
+    string tooltipOre = "Create a ore (Cost: 10 ore)";
+    string tooltipWood = "Create a wood (Cost: 10 wood)";
 
     public HUDState hudState;
     public Text hudText;
@@ -25,9 +30,16 @@ public class HUDManager : Singleton<HUDManager>
 
     public BuildableObject wallObject;
     public BuildableObject turretObject;
-	
-	MouseBehaviour mouse;
 
+    public BuildableObject houseObject;
+	  MouseBehaviour mouse;
+
+
+    public BuildableObject wheatObject;
+    public BuildableObject woodObject;
+    public BuildableObject oreObject;
+
+    public Text timerText;
 
 
     // Start is called before the first frame update
@@ -37,35 +49,29 @@ public class HUDManager : Singleton<HUDManager>
         RefreshHUDSDisplay();
 		mouse = Camera.main.GetComponent<MouseBehaviour>();
     }
+	
+	void Build(BuildableObject obj){
+		if (hudState != HUDState.BASE) {
+        return;
+      }
+
+      hudState = HUDState.BUILD;
+      BuildableObject planner = Instantiate(obj) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  ResetHUDState();
+		  return;
+	  }
+      RefreshHUDSDisplay();
+	}
 
 
     public void BuildWall() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-
-      hudState = HUDState.BUILD;
-      BuildableObject planner = Instantiate(wallObject) as BuildableObject; // Will position itself automatically
-	  if (!mouse.BeginBuild(planner)){
-		  Destroy(planner);
-		  return;
-	  }
-      RefreshHUDSDisplay();
+      Build(wallObject);
     }
 
     public void BuildTurret() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      BuildableObject planner = Instantiate(turretObject) as BuildableObject; // Will position itself automatically
-	  if (!mouse.BeginBuild(planner)){
-		  Destroy(planner);
-		  return;
-	  }
-      RefreshHUDSDisplay();
+      Build(turretObject);
 
     }
 
@@ -90,6 +96,8 @@ public class HUDManager : Singleton<HUDManager>
       hudText.text = tooltipCoin;
     }
 
+
+
     public void PointerExitIcon() {
       hudText.text = "";
     }
@@ -99,7 +107,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void ResetHUDState() {
-		mouse.EndBuild();
+	  mouse.EndBuild();
       hudState = HUDState.BASE;
       hudText.text = "";
       RefreshHUDSDisplay();
@@ -121,4 +129,44 @@ public class HUDManager : Singleton<HUDManager>
           break;
       }
     }
+
+    public void BuildHouse() {
+      Build(houseObject);
+
+    }
+ 
+    public void DisplayHouse() {
+      hudText.text = tooltipHouse;
+    }
+
+
+    public void BuildWheat() {
+      Build(wheatObject);
+
+    }
+ 
+    public void DisplayWheat() {
+      hudText.text = tooltipWheat;
+    }
+
+    public void BuildWood() {
+      Build(woodObject);
+
+    }
+ 
+    public void DisplayWood() {
+      hudText.text = tooltipWood;
+    }
+
+    public void BuildOre() {
+	  Build(oreObject);
+
+    }
+ 
+    public void DisplayOre() {
+      hudText.text = tooltipOre;
+    }
+
 }
+
+

@@ -16,7 +16,6 @@ public class MouseBehaviour : MonoBehaviour
 	Draggable dragging;
 	Action action = Action.IDLE;
 	BuildableObject toBuild;
-	public BuildableObject b;
 	Vector2 targetPos;
     // Update is called once per frame
     void Update()
@@ -58,9 +57,10 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public void PointedAtObject(GameObject thing){
-		pointing = thing;
-		if (thing != null)
+		if (thing != null && thing.layer != LayerMask.NameToLayer("DropArea")) {
+			pointing = thing;
 			Debug.Log("Pointed at " + thing.name);
+		}
 	}
 	
 	public bool IsDragging(){
