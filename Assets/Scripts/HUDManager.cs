@@ -47,35 +47,29 @@ public class HUDManager : Singleton<HUDManager>
         RefreshHUDSDisplay();
 		mouse = Camera.main.GetComponent<MouseBehaviour>();
     }
+	
+	void Build(BuildableObject obj){
+		if (hudState != HUDState.BASE) {
+        return;
+      }
+
+      hudState = HUDState.BUILD;
+      BuildableObject planner = Instantiate(obj) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  ResetHUDState();
+		  return;
+	  }
+      RefreshHUDSDisplay();
+	}
 
 
     public void BuildWall() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-
-      hudState = HUDState.BUILD;
-      BuildableObject planner = Instantiate(wallObject) as BuildableObject; // Will position itself automatically
-	  if (!mouse.BeginBuild(planner)){
-		  Destroy(planner);
-		  return;
-	  }
-      RefreshHUDSDisplay();
+      Build(wallObject);
     }
 
     public void BuildTurret() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      BuildableObject planner = Instantiate(turretObject) as BuildableObject; // Will position itself automatically
-	  if (!mouse.BeginBuild(planner)){
-		  Destroy(planner);
-		  return;
-	  }
-      RefreshHUDSDisplay();
+      Build(turretObject);
 
     }
 
@@ -111,7 +105,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void ResetHUDState() {
-		mouse.EndBuild();
+	  mouse.EndBuild();
       hudState = HUDState.BASE;
       hudText.text = "";
       RefreshHUDSDisplay();
@@ -135,14 +129,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void BuildHouse() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      Instantiate(houseObject); // Will position itself automatically
-      RefreshHUDSDisplay();
+      Build(houseObject);
 
     }
  
@@ -152,14 +139,7 @@ public class HUDManager : Singleton<HUDManager>
 
 
     public void BuildWheat() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      Instantiate(wheatObject); // Will position itself automatically
-      RefreshHUDSDisplay();
+      Build(wheatObject);
 
     }
  
@@ -168,14 +148,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void BuildWood() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      Instantiate(woodObject); // Will position itself automatically
-      RefreshHUDSDisplay();
+      Build(woodObject);
 
     }
  
@@ -184,14 +157,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void BuildOre() {
-      if (hudState != HUDState.BASE) {
-        return;
-      }
-      
-      hudState = HUDState.BUILD;
-
-      Instantiate(oreObject); // Will position itself automatically
-      RefreshHUDSDisplay();
+	  Build(oreObject);
 
     }
  
