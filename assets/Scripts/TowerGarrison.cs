@@ -17,7 +17,7 @@ public class TowerGarrison : Garrison
 	}
 
 	public float GetTotalCooldown(float cd){
-		cd = cd / Mathf.sqrt(units.Count);
+		cd = cd / Mathf.Sqrt(units.Count);
 		return cd;
 	}
 	
