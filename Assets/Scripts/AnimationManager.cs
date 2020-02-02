@@ -54,7 +54,7 @@ public class AnimationManager : MonoBehaviour {
 			}
 			// Remove Previous Animation
 			m_animations[m_curAnim].gameObject.SetActive(false);
-			m_animations[m_curAnim].Reset();
+			m_animations[m_curAnim].ResetAnim();
 
 			// Enable New Animation
 			m_animations[name].gameObject.SetActive(true);
