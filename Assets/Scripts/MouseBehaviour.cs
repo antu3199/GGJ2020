@@ -14,26 +14,25 @@ public class MouseBehaviour : MonoBehaviour
 	public string buildButton = "Fire1";
 	GameObject pointing = null;
 	Draggable dragging;
-	Action action = IDLE;
-	public BuildingStats buildDefault;
-	BuildingStats toBuild;
+	Action action = Action.IDLE;
+	BuildableObject toBuild;
+	public BuildableObject b;
+	Vector2 targetPos;
     // Update is called once per frame
     void Update()
     {		
 		if(Input.GetMouseButtonDown(MouseButtonDrag) && pointing != null){
 			if (Drag(pointing.GetComponent<Draggable>())){
-				action = DRAGGING;
+				action = Action.DRAGGING;
 			}
 		}
 		else if (Input.GetMouseButtonUp(MouseButtonDrag)){
 			if (Drop()){
-				action = IDLE;
+				action = Action.IDLE;
 			}
 		}
-		else if (!dragging && Input.GetButtonDown(buildButton)){
-			if (BeginBuild(buildDefault)){
-				action = BUILDING;
-			}
+		else if (Input.GetAxis("Jump") > 0){
+			BeginBuild(Instantiate(b) as BuildableObject);
 		}
     }
 	
@@ -75,14 +74,19 @@ public class MouseBehaviour : MonoBehaviour
 		return dragging;
 	}
 	
-	bool BeginBuild(BuildingStats building){
+	public bool BeginBuild(BuildableObject building){
 		if (!building){
 			return false;
 		}
-		toBuild = Instantiate(building, this.transform);
-		while (action == BUILDING){
-			
-		}
+		toBuild = building;
+		return true;
 	}
+	
+	public bool EndBuild(){
+		toBuild = null;
+		action = Action.IDLE;
+		return true;
+	}
+
 
 }
