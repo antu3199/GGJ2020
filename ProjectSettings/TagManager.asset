@@ -15,12 +15,12 @@ TagManager:
   - 
   - 
   - Enemy
-  - Building
+  - 
   - Unit
-  - Resource Node
+  - Drop Area
   - Ground
   - Tower
-  - 
+  - House
   - 
   - 
   - 
@@ -45,11 +45,14 @@ TagManager:
   - name: Background
     uniqueID: 1672177105
     locked: 0
-  - name: Resource Nodes
-    uniqueID: 1633706095
-    locked: 0
   - name: Ground
     uniqueID: 3306199797
+    locked: 0
+  - name: Structures
+    uniqueID: 1633706095
+    locked: 0
+  - name: Enemies
+    uniqueID: 3698540031
     locked: 0
   - name: Units
     uniqueID: 3570090607
