@@ -5,6 +5,8 @@ using UnityEngine;
 public class ResourceNode : DropArea {
     public Resource resourceType;
     public int m_startQuantity;
+    public float m_removeDelay;
+
     private int m_currQuantity;
     private List<DraggableUnit> m_gatherers;
     
@@ -32,10 +34,14 @@ public class ResourceNode : DropArea {
         }
     }
 
+    public int getCurrentQuantity() {
+        return m_currQuantity;
+    }
+
     private void DepleteNode() {
         for (int i = m_gatherers.Count - 1; i >= 0; i--) {
             m_gatherers[i].StopTask();
         }
-        Destroy(gameObject);
+        Destroy(gameObject, m_removeDelay);
     }
 }

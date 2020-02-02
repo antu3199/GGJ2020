@@ -80,6 +80,10 @@ public class DraggableUnit : Draggable {
 		// TODO: remove from turret
 	}
 
+	public bool isGathering() {
+		return m_gathering;
+	}
+
 	private IEnumerator GatherNode(ResourceNode node) {
 		Debug.Log("Now gathering " + node.resourceType);
         // m_anim.SetTrigger("Gather");
