@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: 390605f850d0dbc47aca0e0de1ec5a6b
+guid: a348a16b42e027a47955ee0de6236329
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -284627385986098231
-    second: farmer_0
+      213: -2266289606244729542
+    second: woodcutter_0
   - first:
-      213: -2693649759984245316
-    second: farmer_1
+      213: -4872233114377232883
+    second: woodcutter_1
   - first:
-      213: -9215070241222095863
-    second: farmer_2
+      213: -1686768765436281321
+    second: woodcutter_2
   - first:
-      213: -3248431068288352297
-    second: farmer_0
-  - first:
-      213: -8222178687864415003
-    second: farmer_1
-  - first:
-      213: 7187811315037663252
-    second: farmer_2
-  - first:
-      213: -4697590009104051591
-    second: farmer_3
-  - first:
-      213: 4292451368087990154
-    second: farmer_3
-  - first:
-      213: 3191130952945803347
-    second: farmer_4
+      213: -1852722942848644170
+    second: woodcutter_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -125,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: farmer_0
+      name: woodcutter_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7df745187214be2d0800000000000000
-      internalID: -3248431068288352297
+      spriteID: a3d7f954c958c80e0800000000000000
+      internalID: -2266289606244729542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farmer_1
+      name: woodcutter_1
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ecdd0edb04f4ed80800000000000000
-      internalID: -8222178687864415003
+      spriteID: d0e56a2fbc9526cb0800000000000000
+      internalID: -4872233114377232883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farmer_2
+      name: woodcutter_2
       rect:
         serializedVersion: 2
         x: 32
@@ -181,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4107a51fe4c30c360800000000000000
-      internalID: 7187811315037663252
+      spriteID: 71e32f5aeb46798e0800000000000000
+      internalID: -1686768765436281321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farmer_3
+      name: woodcutter_3
       rect:
         serializedVersion: 2
         x: 64
@@ -202,29 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8f2682e6c9d19b30800000000000000
-      internalID: 4292451368087990154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: farmer_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 350a612c1bc294c20800000000000000
-      internalID: 3191130952945803347
+      spriteID: 6bb4a44bc4ec946e0800000000000000
+      internalID: -1852722942848644170
       vertices: []
       indices: 
       edges: []
