@@ -21,6 +21,8 @@ public class EnemyAggro : MonoBehaviour {
 	}
 
 	public Vector2 getMovingDirection() {
+        if (!m_target)
+            return Vector2.zero;
 		return (m_target.position - transform.position).normalized;
 	}
 
