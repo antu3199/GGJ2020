@@ -14,6 +14,24 @@ TextureImporter:
   - first:
       213: -8233568919588186658
     second: lumberjack_3
+  - first:
+      213: 3036240584617531924
+    second: lumberjack_0
+  - first:
+      213: -8525871476749765759
+    second: lumberjack_1
+  - first:
+      213: -200078462192311584
+    second: lumberjack_2
+  - first:
+      213: -1233783919825343534
+    second: lumberjack_3
+  - first:
+      213: -510948022475290688
+    second: lumberjack_4
+  - first:
+      213: -8466022573124970583
+    second: lumberjack_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -112,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 179ed62d1b61f8130800000000000000
-      internalID: 3571097982523533681
+      spriteID: 41a90ca99b4e22a20800000000000000
+      internalID: 3036240584617531924
       vertices: []
       indices: 
       edges: []
@@ -133,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22e1e07f4cc1dc860800000000000000
-      internalID: 7551723782454255138
+      spriteID: 183f1bb50150ea980800000000000000
+      internalID: -8525871476749765759
       vertices: []
       indices: 
       edges: []
@@ -154,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b721123a2d1c300800000000000000
-      internalID: 270729050695301997
+      spriteID: 0e222ddd2bd293df0800000000000000
+      internalID: -200078462192311584
       vertices: []
       indices: 
       edges: []
@@ -175,8 +193,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed5df32e0bc7cbd80800000000000000
-      internalID: -8233568919588186658
+      spriteID: 2dba831df08b0eee0800000000000000
+      internalID: -1233783919825343534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberjack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7927c1355a28a80800000000000000
+      internalID: -8466022573124970583
       vertices: []
       indices: 
       edges: []
