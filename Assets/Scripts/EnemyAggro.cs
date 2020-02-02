@@ -39,7 +39,7 @@ public class EnemyAggro : MonoBehaviour {
 	//Coroutines
 	IEnumerator attack() {
 		while(m_attackable != null && m_attackable.GetComponent<BaseStatsBehaviour>() != null) {
-			Debug.Log("Attacking!");
+			m_attackable.GetComponent<BaseStatsBehaviour>().takeDamage(m_attackDamage);
 			yield return new WaitForSeconds(m_attackDelay);
 		}
 	}

@@ -70,8 +70,11 @@ public class AnimationManager : MonoBehaviour {
 			if(m_effectCoroutine != null) {
 				StopCoroutine(m_effectCoroutine);
 			}
-			// Remove Previous Animation
-			m_effects[m_curEffect].enabled = false;
+
+			if(m_curEffect != null) {
+				// Remove Previous Animation
+				m_effects[m_curEffect].enabled = false;
+			}
 
 			// Enable new effect
 			m_effects[name].enabled = true;
@@ -79,6 +82,13 @@ public class AnimationManager : MonoBehaviour {
 			m_effectCoroutine = MonitorEffect(m_effects[m_curEffect], repeat);
 			StartCoroutine(m_effectCoroutine);
 		}
+	}
+
+	public void PauseAnimation() {
+		if(m_animCoroutine != null) {
+			StopCoroutine(m_animCoroutine);
+		}
+		m_animations[m_curAnim].Pause();
 	}
 
 	IEnumerator MonitorAnimation(SpriteAnimator anim, bool repeat) {
@@ -99,7 +109,7 @@ public class AnimationManager : MonoBehaviour {
 		effect.StartFade();
 
 		if(!effect.repeat) {
-			yield return new WaitForSeconds(effect.fadeSpeed + (effect.goBackToNormal ? 1 : 0));
+			yield return new WaitForSeconds(effect.fadeDuration + (effect.goBackToNormal ? 1 : 0));
 			// No Effect applied
 			m_curEffect = null;
 		}

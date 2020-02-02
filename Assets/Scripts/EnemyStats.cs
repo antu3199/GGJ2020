@@ -4,5 +4,5 @@ using UnityEngine;
 using System;
 
 public class EnemyStats : BaseStatsBehaviour {
-
+	
 }
