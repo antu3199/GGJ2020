@@ -38,6 +38,7 @@ public class BuildableObject : MonoBehaviour
 		mouse = Camera.main.GetComponent<MouseBehaviour>();
 		yOffset = spriteRend.bounds.extents.y;
 		xExtent = spriteRend.bounds.extents.x;
+        Debug.Log(yOffset);
     }
 
     // Update is called once per frame
