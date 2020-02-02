@@ -25,7 +25,7 @@ public class BaseStatsBehaviour : MonoBehaviour {
 		m_currentHp = Math.Max(m_currentHp - amount, 0);
 	}
 
-	void Update() {
+	protected virtual void Update() {
 		if(m_currentHp <= 0) {
 			Destroy(gameObject, m_delayDestroy);
 		}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6040506089615835041}
   - component: {fileID: 3190043978312360365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5821171910259624816}
   - component: {fileID: 4899847973340237866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5247314939337417231}
   - component: {fileID: 5924497631045763876}
   - component: {fileID: 5452503809984835627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteyBittyBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_attackDamage: 0
+  m_attackDamage: 10
   m_attackDelay: 1
   m_attackable: {fileID: 0}
 --- !u!114 &7388970156067284697
@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6554624750204010835}
   - component: {fileID: 5023160815165676020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -25,6 +25,8 @@ public class HUDManager : Singleton<HUDManager>
 
     public BuildableObject wallObject;
     public BuildableObject turretObject;
+	
+	MouseBehaviour mouse;
 
 
 
@@ -33,6 +35,7 @@ public class HUDManager : Singleton<HUDManager>
     {
         hudState = HUDState.BASE;
         RefreshHUDSDisplay();
+		mouse = Camera.main.GetComponent<MouseBehaviour>();
     }
 
 
@@ -42,7 +45,11 @@ public class HUDManager : Singleton<HUDManager>
       }
 
       hudState = HUDState.BUILD;
-      Instantiate(wallObject); // Will position itself automatically
+      BuildableObject planner = Instantiate(wallObject) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  return;
+	  }
       RefreshHUDSDisplay();
     }
 
@@ -53,7 +60,11 @@ public class HUDManager : Singleton<HUDManager>
       
       hudState = HUDState.BUILD;
 
-      Instantiate(turretObject); // Will position itself automatically
+      BuildableObject planner = Instantiate(turretObject) as BuildableObject; // Will position itself automatically
+	  if (!mouse.BeginBuild(planner)){
+		  Destroy(planner);
+		  return;
+	  }
       RefreshHUDSDisplay();
 
     }
@@ -88,6 +99,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void ResetHUDState() {
+		mouse.EndBuild();
       hudState = HUDState.BASE;
       hudText.text = "";
       RefreshHUDSDisplay();

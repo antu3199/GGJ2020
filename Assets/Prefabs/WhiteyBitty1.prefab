@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_attackDamage: 0
+  m_attackDamage: 1
   m_attackDelay: 1
   m_attackable: {fileID: 0}
 --- !u!114 &3252102948565330710
