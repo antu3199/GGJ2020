@@ -23,7 +23,7 @@ public class DraggableUnit : Draggable {
 		m_collider = GetComponent<Collider2D>();
 		m_dropAreaFilter = new ContactFilter2D(){};
 		m_dropAreaFilter.SetLayerMask(m_dropArea);
-		m_results = new Collider2D[3];
+		m_results = new Collider2D[10];
 	}
 
 	public override Draggable OnDrag() {
@@ -38,6 +38,8 @@ public class DraggableUnit : Draggable {
 
     // Checks for nearby DropAreas and uses them if there are any, returning true if successful, false if there are no DropAreas
 	private bool CheckForDropAreas() {
+        if (m_collider == null)
+            return false;
 		int numHits = m_collider.OverlapCollider(m_dropAreaFilter, m_results);
 		if (numHits == 1) {
 			UseDropArea(m_results[0].GetComponent<DropArea>());
