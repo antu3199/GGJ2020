@@ -83,7 +83,7 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public bool EndBuild(){
-		Destroy(toBuild);
+		Destroy(toBuild.gameObject);
 		toBuild = null;
 		action = Action.IDLE;
 		return true;
