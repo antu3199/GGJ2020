@@ -22,6 +22,7 @@ public class MouseBehaviour : MonoBehaviour
     {		
 		if(Input.GetMouseButtonDown(MouseButtonDrag) && pointing != null){
 			if (Drag(pointing.GetComponent<Draggable>())){
+        MusicManager.Instance.PlaySound("highclick");
 				action = Action.DRAGGING;
 			}
 		}
