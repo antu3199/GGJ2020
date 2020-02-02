@@ -73,4 +73,8 @@ public class SpriteAnimator : MonoBehaviour
       repeatDelayCounter = 0;
     }
 
+    public float GetTime() {
+      return sprites.Count * transitionTime;
+    }
+
 }

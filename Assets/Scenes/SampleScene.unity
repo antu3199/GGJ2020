@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192154740}
   - component: {fileID: 192154741}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,9 +214,9 @@ GameObject:
   - component: {fileID: 344508927}
   - component: {fileID: 344508926}
   - component: {fileID: 344508925}
-  - component: {fileID: 344508924}
   - component: {fileID: 344508928}
-  m_Layer: 8
+  - component: {fileID: 344508924}
+  m_Layer: 10
   m_Name: New Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,9 +232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 344508923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc089dba693918247b8ced44ed2902a5, type: 3}
+  m_Script: {fileID: 11500000, guid: fcf2e5b9e47fbd5419c1c13616d8ef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_dropArea:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &344508925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -359,7 +362,10 @@ GameObject:
   - component: {fileID: 420426742}
   - component: {fileID: 420426741}
   - component: {fileID: 420426745}
-  m_Layer: 0
+  - component: {fileID: 420426746}
+  - component: {fileID: 420426747}
+  - component: {fileID: 420426748}
+  m_Layer: 13
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,6 +482,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 1
   cd: 1
+  attackEffectTime: 0.2
+--- !u!114 &420426746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420426740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c54d49873d13cf4994aa8b5ab3bdce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units: []
+--- !u!61 &420426747
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420426740}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.78}
+    newSize: {x: 0.32, y: 0.78}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.78}
+  m_EdgeRadius: 0
+--- !u!114 &420426748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420426740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e474228f293a4d5abff6e67593c5f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_totalHp: 100
+  m_currentHp: 100
 --- !u!1 &465718341
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465718342}
   - component: {fileID: 465718343}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1573005550}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Aiming Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
