@@ -48,6 +48,9 @@ TagManager:
   - name: Ground
     uniqueID: 3306199797
     locked: 0
+  - name: Spawners
+    uniqueID: 3021515561
+    locked: 0
   - name: Structures
     uniqueID: 1633706095
     locked: 0
