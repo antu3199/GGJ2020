@@ -25,19 +25,22 @@ public class EnemyAggro : MonoBehaviour {
 	}
 
 	// Collider Checks
-	void OnTriggerEnter2D(Collider2D col) {
-		if(col.gameObject.GetComponent<BaseStatsBehaviour>() != null) {
+	protected virtual void OnCollisionEnter2D(Collision2D col) {
+		BaseStatsBehaviour target = col.gameObject.GetComponent<BaseStatsBehaviour>();
+		if(target != null &&
+			target.GetType() != typeof(EnemyStats) &&
+			target.getHp() > 0) {
 			m_attackable = col.gameObject;
 			StartCoroutine(attack());
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D col) {
+	protected virtual void OnCollisionExit2D(Collision2D col) {
 		m_attackable = null;
 	}
 
 	//Coroutines
-	IEnumerator attack() {
+	protected virtual IEnumerator attack() {
 		while(m_attackable != null && m_attackable.GetComponent<BaseStatsBehaviour>() != null) {
 			m_attackable.GetComponent<BaseStatsBehaviour>().takeDamage(m_attackDamage);
 			yield return new WaitForSeconds(m_attackDelay);
