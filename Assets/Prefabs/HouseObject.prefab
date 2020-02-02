@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 1663445143}
   - component: {fileID: 1663445144}
   - component: {fileID: 1663445145}
+  - component: {fileID: -5135055212915473704}
   m_Layer: 14
   m_Name: HouseObject
   m_TagString: Untagged
@@ -318,6 +319,8 @@ MonoBehaviour:
   m_totalHp: 100
   m_currentHp: 100
   m_delayDestroy: 1
+  takeDamageSound: 
+  takeDamageSoundVolume: -1
   m_progressBar: {fileID: 4623081734580935338}
 --- !u!114 &1663445143
 MonoBehaviour:
@@ -370,6 +373,22 @@ MonoBehaviour:
   isFading: 0
   repeat: 0
   playOnStart: 0
+--- !u!114 &-5135055212915473704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159030568441032393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75d1d8c27bdf104ca74019fa4c8db78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnList:
+  - {fileID: 2949847556298874956, guid: 2d94e117acf8a49c2819908fab4d9945, type: 3}
+  - {fileID: 6013281031639308363, guid: 3383b89d0c76148f19337384521cf26c, type: 3}
+  - {fileID: 7366870934247904656, guid: 5efa5d273e4f444bab67623bbf553e5b, type: 3}
 --- !u!1 &8324436145235261053
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,4 +462,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  
