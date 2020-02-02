@@ -7,6 +7,7 @@ public class DraggableUnit : Draggable {
     public ProgressBar m_progressBar;
 	private UnitStats m_unitStats;
 	private UnitInventory m_unitInventory;
+    private Animator m_anim;
 	private Collider2D m_collider;
     [Tooltip("The layers considered DropAreas.")]
 	public LayerMask m_dropArea;
@@ -19,6 +20,7 @@ public class DraggableUnit : Draggable {
 		base.Start();
 		m_unitStats = GetComponent<UnitStats>();
 		m_unitInventory = GetComponent<UnitInventory>();
+        m_anim = GetComponent<Animator>();
 		m_collider = GetComponent<Collider2D>();
 		m_dropAreaFilter = new ContactFilter2D(){};
 		m_dropAreaFilter.SetLayerMask(m_dropArea);
@@ -65,6 +67,7 @@ public class DraggableUnit : Draggable {
 	}
 
 	private void StopTask() {
+        // m_anim.SetTrigger("Idle");
 		m_gathering = false;
         m_progressBar.gameObject.SetActive(false);
 		// TODO: remove from turret
@@ -72,6 +75,7 @@ public class DraggableUnit : Draggable {
 
 	private IEnumerator GatherNode(ResourceNode node) {
 		Debug.Log("Now gathering " + node.resourceType);
+        // m_anim.SetTrigger("Gather");
 		m_gathering = true;
         m_progressBar.gameObject.SetActive(true);
         m_progressBar.SetFillAmount(0);
