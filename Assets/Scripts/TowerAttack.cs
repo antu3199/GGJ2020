@@ -44,7 +44,7 @@ public class TowerAttack : MonoBehaviour
 			estats.takeDamage(getAttack());
 			StartCoroutine(AttackEffect(attackEffectTime));
 			Debug.Log("bop");
-			yield return new WaitForSeconds(getCooldown);
+			yield return new WaitForSeconds(getCooldown());
 		}
 	}
 	
