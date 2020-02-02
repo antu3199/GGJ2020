@@ -33,6 +33,7 @@ public class AnimationManager : MonoBehaviour {
 	public Dictionary<String, ColorFadeEffect> m_effects = new Dictionary<String, ColorFadeEffect>();
 
 	void Awake() {
+		// List into Map
 		foreach(NamedAnimation anim in m_animList) {
 			m_animations.Add(anim.m_name, anim.m_anim);
 		}
@@ -40,12 +41,17 @@ public class AnimationManager : MonoBehaviour {
 		foreach(NamedEffect effect in m_effectList) {
 			m_effects.Add(effect.m_name, effect.m_effect);
 		}
+
+		// Set the starting anim to default
+		m_curAnim = m_defaultAnim;
 	}
 
 	public void SetAnimation(String name, bool repeat = false) {
 		// Ignore resetting animation
 		if(name != m_curAnim) {
-			StopCoroutine(m_animCoroutine);
+			if(m_animCoroutine != null) {
+				StopCoroutine(m_animCoroutine);
+			}
 			// Remove Previous Animation
 			m_animations[m_curAnim].gameObject.SetActive(false);
 			m_animations[m_curAnim].Reset();
@@ -61,7 +67,9 @@ public class AnimationManager : MonoBehaviour {
 	public void SetEffect(String name, bool repeat = false) {
 		// Ignore resetting effects
 		if(name != m_curEffect) {
-			StopCoroutine(m_effectCoroutine);
+			if(m_effectCoroutine != null) {
+				StopCoroutine(m_effectCoroutine);
+			}
 			// Remove Previous Animation
 			m_effects[m_curEffect].enabled = false;
 

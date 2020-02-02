@@ -417,6 +417,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543744026}
   - component: {fileID: 543744025}
+  - component: {fileID: 543744027}
+  - component: {fileID: 543744028}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -488,6 +490,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &543744027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543744024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e474228f293a4d5abff6e67593c5f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_totalHp: 20
+  m_currentHp: 20
+--- !u!61 &543744028
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543744024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &729146620
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,8 +572,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 729146620}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 6200000, guid: 1e7ce64e221f5476bbe86b717fec3d75, type: 2}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -640,12 +682,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e3388ad57fc44ce8eb6296a35cff05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 543744024}
   m_enemySpawners:
   - {fileID: 1740493958}
   - {fileID: 304904201}
   m_enemyCost:
-  - m_enemy: {fileID: 1530073996882143410, guid: b588ea50fe6d74b5488117202256a474,
+  - m_enemy: {fileID: 3252102948565330713, guid: 2cbb5369b35814d2394eb7783396a65b,
       type: 3}
     m_cost: 100
   m_roundSeconds: 60
