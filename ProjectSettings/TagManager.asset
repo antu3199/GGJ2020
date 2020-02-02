@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Chapel
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Building
   - Unit
-  - DropArea
+  - Resource Node
   - Ground
   - Tower
   - 
@@ -41,8 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1672177105
+    locked: 0
   - name: Resource Nodes
     uniqueID: 1633706095
+    locked: 0
+  - name: Ground
+    uniqueID: 3306199797
     locked: 0
   - name: Units
     uniqueID: 3570090607

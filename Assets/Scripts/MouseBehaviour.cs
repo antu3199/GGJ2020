@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class MouseBehaviour : MonoBehaviour
 {
+	enum Action {
+		IDLE,
+		DRAGGING,
+		BUILDING,
+		num_types
+	}
 	public int MouseButtonDrag = 0; // 0 = LMB, 1 = RMB
+	public string buildButton = "Fire1";
 	GameObject pointing = null;
 	Draggable dragging;
+	Action action = Action.IDLE;
+	BuildableObject toBuild;
+	public BuildableObject b;
+	Vector2 targetPos;
     // Update is called once per frame
     void Update()
     {		
 		if(Input.GetMouseButtonDown(MouseButtonDrag) && pointing != null){
-			Drag(pointing.GetComponent<Draggable>());
+			if (Drag(pointing.GetComponent<Draggable>())){
+				action = Action.DRAGGING;
+			}
 		}
 		else if (Input.GetMouseButtonUp(MouseButtonDrag)){
-			Drop();
+			if (Drop()){
+				action = Action.IDLE;
+			}
 		}
     }
 	
@@ -54,5 +69,20 @@ public class MouseBehaviour : MonoBehaviour
 	
 	public Draggable GetDragging(){
 		return dragging;
+	}
+	
+	public bool BeginBuild(BuildableObject building){
+		if (!building){
+			return false;
+		}
+		toBuild = building;
+		return true;
+	}
+	
+	public bool EndBuild(){
+		Destroy(toBuild.gameObject);
+		toBuild = null;
+		action = Action.IDLE;
+		return true;
 	}
 }

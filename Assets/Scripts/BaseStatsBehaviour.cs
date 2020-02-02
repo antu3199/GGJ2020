@@ -6,6 +6,8 @@ using System;
 public class BaseStatsBehaviour : MonoBehaviour {
 	public int m_totalHp;
 	public int m_currentHp;
+	[Tooltip("Set delay to be destroyed")]
+	public int m_delayDestroy;
 
 	public void raiseTotalHp(int amount) {
 		m_totalHp += amount;
@@ -21,5 +23,11 @@ public class BaseStatsBehaviour : MonoBehaviour {
 
 	public void takeDamage(int amount) {
 		m_currentHp = Math.Max(m_currentHp - amount, 0);
+	}
+
+	void Update() {
+		if(m_currentHp <= 0) {
+			Destroy(gameObject, m_delayDestroy);
+		}
 	}
 }

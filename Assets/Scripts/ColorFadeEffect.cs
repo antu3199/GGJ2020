@@ -10,7 +10,7 @@ public class ColorFadeEffect : MonoBehaviour
   public bool goBackToNormal;
   public bool destroyOnDone;
 
-  public float fadeSpeed = 1;
+  public float fadeDuration = 1;
 
   public bool isFading;
 
@@ -36,9 +36,9 @@ public class ColorFadeEffect : MonoBehaviour
     {
         if (isFading) {
           if (isGoingTo) {
-            fadeCounter += Time.deltaTime * fadeSpeed;
-            spriteRend.color = Color.Lerp(initialColor, colorTo, fadeCounter);
-            if (fadeCounter >= 1) {
+            fadeCounter += Time.deltaTime;
+            spriteRend.color = Color.Lerp(initialColor, colorTo, fadeCounter/fadeDuration);
+            if (fadeCounter/fadeDuration >= 1) {
               if (goBackToNormal) {
                 isGoingTo = false;
               } else {
@@ -50,9 +50,9 @@ public class ColorFadeEffect : MonoBehaviour
               }
             } 
           } else {
-            fadeCounter -= Time.deltaTime * fadeSpeed;
-            spriteRend.color = Color.Lerp(initialColor, colorTo, fadeCounter);
-            if (fadeCounter <= 0) {
+            fadeCounter -= Time.deltaTime;
+            spriteRend.color = Color.Lerp(initialColor, colorTo, fadeCounter/fadeDuration);
+            if (fadeCounter/fadeDuration <= 0) {
               if (repeat) {
                 StartFade();
               } else if (destroyOnDone) {
