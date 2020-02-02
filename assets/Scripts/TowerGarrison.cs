@@ -17,12 +17,12 @@ public class TowerGarrison : Garrison
 	}
 
 	public float GetTotalCooldown(float cd){
-		//TODO loop thru each unit garrisoned
+		cd = cd / Mathf.Sqrt(units.Count);
 		return cd;
 	}
 	
 	public int GetTotalAttack(int attack){
-		//TODO loop thru each unit garrisoned
+		attack += units.Count;
 		return attack;
 	}
 }

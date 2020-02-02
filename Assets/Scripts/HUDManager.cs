@@ -15,6 +15,7 @@ public class HUDManager : Singleton<HUDManager>
     string tooltipCreateTurret = "Create a turret (Cost: 30 ore, 10 wood, 10 wheat)";
 
     string tooltipBuild = "Place the structure";
+    string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
 
     public HUDState hudState;
     public Text hudText;
@@ -57,12 +58,25 @@ public class HUDManager : Singleton<HUDManager>
 
     }
 
+    public void PressCoin() {
+      if (hudState != HUDState.BASE) {
+        return;
+      }
+
+      //TODO: if can buy a coin
+      // ...
+    }
+
     public void DisplayBuildWallTooltip() {
       hudText.text = tooltipCreateWall;
     }
 
     public void DisplayBuildTurretTooltip() {
       hudText.text = tooltipCreateTurret;
+    }
+
+    public void DisplayCoinToolTip() {
+      hudText.text = tooltipCoin;
     }
 
     public void PointerExitIcon() {
