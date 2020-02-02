@@ -6929,6 +6929,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a11ebb4d1ed0d1418e6aad1fa803a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1158018104 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1840379494284413439, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3001802443055362235}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175773410
 GameObject:
   m_ObjectHideFlags: 0
@@ -21465,75 +21471,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104714065}
   m_CullTransparentMesh: 0
---- !u!1001 &2107036156
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7035051966266849036, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_Name
-      value: MusicManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7035051966266849038, guid: 4e4d5d164cddabf46a29a5044c8097ca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4e4d5d164cddabf46a29a5044c8097ca, type: 3}
 --- !u!1 &2135838480
 GameObject:
   m_ObjectHideFlags: 0
@@ -21698,6 +21635,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1840379494284413432, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: spriteRend
+      value: 
+      objectReference: {fileID: 1158018104}
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[0].m_stack.m_ui
@@ -21721,6 +21663,16 @@ PrefabInstance:
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[2].m_stack.m_count
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_entries.Array.data[0].m_stack.m_count
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_entries.Array.data[1].m_stack.m_count
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413436, guid: 959ee61a4b3014dc2acb7c5fee82367a,

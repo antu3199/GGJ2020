@@ -29,7 +29,12 @@ public class MouseBehaviour : MonoBehaviour
     {		
 		if(Input.GetMouseButtonDown(MouseButtonDrag) && pointing != null){
 			if (Drag(pointing.GetComponent<Draggable>())){
-        MusicManager.Instance.PlaySound("highclick");
+                if (MusicManager.Instance != null)
+                    MusicManager.Instance.PlaySound("highclick");
+                else
+                {
+                    Debug.Log("Music Manager not found");
+                }
 				action = Action.DRAGGING;
 			}
 		}

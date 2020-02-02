@@ -26,7 +26,10 @@ public class BaseStatsBehaviour : MonoBehaviour {
 
 	public void takeDamage(int amount) {
 		m_currentHp = Math.Max(m_currentHp - amount, 0);
-    MusicManager.Instance.PlaySound(takeDamageSound, takeDamageSoundVolume);
+        if (MusicManager.Instance != null)
+            MusicManager.Instance.PlaySound(takeDamageSound, takeDamageSoundVolume);
+        else
+            Debug.Log("Music manager not found");
 	}
 
 	protected virtual void Update() {
