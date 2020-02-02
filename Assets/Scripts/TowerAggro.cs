@@ -24,6 +24,11 @@ public class TowerAggro : MonoBehaviour
         {
             aimingPart.transform.eulerAngles =  new Vector3(0, 0, PointToTarget(currentTarget.transform));
         }
+        else
+        {
+            targets.Remove(currentTarget);
+            currentTarget = null;
+        }
     }
 
     void FixedUpdate()

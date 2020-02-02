@@ -62,10 +62,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 1417131724457467149, guid: c969020d0a1426f4387114da43e13071,
         type: 3}
       propertyPath: m_Name
-      value: ResourceNode
+      value: Wheat (Variant)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467151, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6271399085124507442, guid: 5b8ee375cf2e1354f84df26064da4e2f,
+        type: 3}
+    - target: {fileID: 1417131724457467151, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467151, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467151, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c969020d0a1426f4387114da43e13071, type: 3}
