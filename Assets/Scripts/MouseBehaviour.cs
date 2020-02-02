@@ -83,10 +83,9 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public bool EndBuild(){
+		Destroy(toBuild);
 		toBuild = null;
 		action = Action.IDLE;
 		return true;
 	}
-
-
 }

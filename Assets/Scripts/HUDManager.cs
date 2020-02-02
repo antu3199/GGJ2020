@@ -85,6 +85,7 @@ public class HUDManager : Singleton<HUDManager>
     }
 
     public void ResetHUDState() {
+		mouse.EndBuild();
       hudState = HUDState.BASE;
       hudText.text = "";
       RefreshHUDSDisplay();

@@ -48,7 +48,6 @@ public class BuildableObject : MonoBehaviour
 	  newObject.transform.position = transform.position;
       HUDManager.Instance.ResetHUDState();
 	  mouse.EndBuild();
-      Destroy(this.gameObject);
     }
 	
 	void SetCanPlace(bool place){
