@@ -50,6 +50,13 @@ public class EnemyMovement : MonoBehaviour {
 			dirToMove = new Vector2(dirToMove.x * m_availableDir.x, dirToMove.y * m_availableDir.y).normalized * m_avgSpeed * UnityEngine.Random.Range(m_variance.x, m_variance.y);
 			m_rb.velocity = new Vector2((dirToMove.x + m_rb.velocity.x)/2, m_rb.velocity.y + dirToMove.y);
 		}
+
+		//Flip facing dir
+		if(m_aggro.getMovingDirection().x < 0) {
+			transform.localScale = new Vector2(-1 * Mathf.Abs(transform.localScale.x), transform.localScale.y);
+		} else {
+			transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+		}
 	}
 
 	public bool isInCombat() {
