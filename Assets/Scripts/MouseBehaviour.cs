@@ -23,12 +23,9 @@ public class MouseBehaviour : MonoBehaviour
 		if (dragging != null || target == null){
 			return false;
 		}
-		if (!target.OnDrag()){
-			return false;
-		}
-		dragging = target;
+		dragging = target.OnDrag();
 		// Disable colliders & gravity
-		return true;
+		return dragging != null;
 	}
 	
 	bool Drop(){

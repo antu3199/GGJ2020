@@ -29,11 +29,11 @@ public class Draggable : MonoBehaviour
 		return true;
 	}
 	
-	public virtual bool OnDrag(){
+	public virtual Draggable OnDrag(){
 		//Debug.Log("Ooh");
 		dragged = true;
 		rb.isKinematic = true;
-		return true;
+		return this;
 	}
 	
 	void OnMouseEnter(){
@@ -44,5 +44,9 @@ public class Draggable : MonoBehaviour
 	void OnMouseExit(){
 		//Debug.Log("No longer being pointed at");
 		Camera.main.GetComponent<MouseBehaviour>().PointedAtObject(null);
+	}
+	
+	public bool isDragged(){
+		return dragged;
 	}
 }

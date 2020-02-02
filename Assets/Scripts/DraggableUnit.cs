@@ -31,7 +31,7 @@ public class DraggableUnit : Draggable {
 		return base.OnDrop();
 	}
 
-	public override bool OnDrag() {
+	public override Draggable OnDrag() {
 		StopTask();
 		return base.OnDrag();
 	}
