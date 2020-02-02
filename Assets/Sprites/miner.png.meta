@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: 3553336443550056221
     second: miner_3
+  - first:
+      213: 5957870940682892022
+    second: miner_4
+  - first:
+      213: -8600685881974301466
+    second: miner_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -201,6 +207,27 @@ TextureImporter:
       bones: []
       spriteID: d1f30454bacff4130800000000000000
       internalID: 3553336443550056221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miner_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec543c32c934a880800000000000000
+      internalID: -8600685881974301466
       vertices: []
       indices: 
       edges: []

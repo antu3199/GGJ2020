@@ -39,6 +39,8 @@ public class HUDManager : Singleton<HUDManager>
     public BuildableObject woodObject;
     public BuildableObject oreObject;
 
+    public Text timerText;
+
 
     // Start is called before the first frame update
     void Start()

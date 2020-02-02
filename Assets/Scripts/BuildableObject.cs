@@ -1,19 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BuildableObject : MonoBehaviour
-{
+{	
+	[Serializable]
+	public class Requirement {
+		public Resource m_resource;
+		public int m_cost;
+	}
+
     public GameObject realObjectPrefab;
     public SpriteRenderer spriteRend;
     public Color goodPlacementColor;
     public Color badPlacementColor;
+    public List<Requirement> m_requirements = new List<Requirement>();
+
+    public Dictionary<Resource, int> m_costToBuild = new Dictionary<Resource, int>();
+
 	MouseBehaviour mouse;
 	[SerializeField]
 	float yOffset = 0;
 	float xExtent = 0;
 	[SerializeField]
     bool canPlace = false;
+
+    void Awake() {
+    	foreach(Requirement req in m_requirements) {
+    		m_costToBuild.Add(req.m_resource, req.m_cost);
+    	}
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,16 +56,20 @@ public class BuildableObject : MonoBehaviour
 		
     } 
 	
-	void FixedUpdate(){
+	void FixedUpdate() {
+
 	}
 
     void OnClickObject() {
-      //TODO: Check if can build object at this location...
-      // TODO: Spend resources
-
-      GameObject newObject = Instantiate(realObjectPrefab) as GameObject;
-	  newObject.transform.position = transform.position;
-      HUDManager.Instance.ResetHUDState();
+		//TODO: Check if can build object at this location...
+		// TODO: Spend resources
+		if(!SummonerInventory.Instance.tryConsumeResources(m_costToBuild)) {
+			return;
+		}
+		
+		GameObject newObject = Instantiate(realObjectPrefab) as GameObject;
+		newObject.transform.position = transform.position;
+		HUDManager.Instance.ResetHUDState();
     }
 	
 	void SetCanPlace(bool place){

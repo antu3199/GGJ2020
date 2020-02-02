@@ -11,7 +11,6 @@ public class UnitInventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		m_resources.Add(Resource.ORE, 0);
 		m_resources.Add(Resource.WOOD, 0);
 		m_resources.Add(Resource.WHEAT, 0);
@@ -34,8 +33,10 @@ public class UnitInventory : MonoBehaviour {
 	public void depositResources(SummonerInventory summonerInventory) {
 		List<Resource> keys = new List<Resource>(m_resources.Keys);
 		foreach(Resource key in keys) {
-			summonerInventory.addResource(key, m_resources[key]);
-			m_resources[key] = 0;
+			if(m_resources[key] > 0) {
+				summonerInventory.addResource(key, m_resources[key]);
+				m_resources[key] = 0;
+			}
 		}
 	}
 
