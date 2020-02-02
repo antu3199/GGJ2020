@@ -17,6 +17,7 @@ public class SummonerInventory : Singleton<SummonerInventory> {
 		public ResourceStack m_stack;
 	}
 
+	public Chapel m_chapel;
 	public List<Entry> m_entries = new List<Entry>();
 	private Dictionary<Resource, ResourceStack> m_resources = new Dictionary<Resource, ResourceStack>();
 
