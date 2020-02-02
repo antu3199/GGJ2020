@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4838049779658744041}
   - component: {fileID: 2918223579431570719}
   - component: {fileID: 3554345923731692578}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: BarContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1637271432134542376}
   - component: {fileID: 7875624107177364295}
   - component: {fileID: 6641320875089911439}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ProgressBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1931242525422168623}
   - component: {fileID: 3361514551549161744}
   - component: {fileID: 4894561921803258786}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: BarOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
