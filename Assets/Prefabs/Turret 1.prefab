@@ -474,6 +474,8 @@ MonoBehaviour:
   m_totalHp: 100
   m_currentHp: 100
   m_delayDestroy: 1
+  takeDamageSound: turretdamage
+  takeDamageSoundVolume: -1
   m_progressBar: {fileID: 1353569643}
 --- !u!114 &174462768931640495
 MonoBehaviour:
