@@ -47,7 +47,6 @@ public class BuildableObject : MonoBehaviour
       GameObject newObject = Instantiate(realObjectPrefab) as GameObject;
 	  newObject.transform.position = transform.position;
       HUDManager.Instance.ResetHUDState();
-	  mouse.EndBuild();
     }
 	
 	void SetCanPlace(bool place){

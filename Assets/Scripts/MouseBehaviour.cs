@@ -15,8 +15,8 @@ public class MouseBehaviour : MonoBehaviour
 	GameObject pointing = null;
 	Draggable dragging;
 	Action action = Action.IDLE;
+	[SerializeField]
 	BuildableObject toBuild;
-	public BuildableObject b;
 	Vector2 targetPos;
     // Update is called once per frame
     void Update()
