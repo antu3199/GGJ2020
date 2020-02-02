@@ -100,5 +100,12 @@ MonoBehaviour:
   spriteRend: {fileID: 7815398948846950510}
   goodPlacementColor: {r: 0.100138426, g: 1, b: 0, a: 0.5019608}
   badPlacementColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+  m_requirements:
+  - m_resource: 0
+    m_cost: 30
+  - m_resource: 1
+    m_cost: 10
+  - m_resource: 2
+    m_cost: 10
   yOffset: 0
   canPlace: 0
