@@ -54,4 +54,8 @@ public class SpriteAnimator : MonoBehaviour
       spriteRend.sprite = sprites[frameIndex];
     }
 
+    public float GetTime() {
+      return sprites.Count * transitionTime;
+    }
+
 }
