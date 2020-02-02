@@ -27,6 +27,10 @@ public class UnitInventory : MonoBehaviour {
 		return count;
 	}
 
+	public bool inventoryFull() {
+		return countInventory() >= m_resourceLimit;
+	}
+
 	public void upgradeBackpack() {
 		m_resourceLimit += UnitInventory.BACKPACK_UPGRADE;
 	}
