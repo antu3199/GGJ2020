@@ -32,12 +32,8 @@ public class TowerAttack : MonoBehaviour
 	
 	IEnumerator Attack(){
 		while (true){
-			while (!manned){
-				Debug.Log("No personnel");
-				yield return null;
-			}
-			while (aggro.currentTarget == null){
-				Debug.Log("No enemy");
+			while (!manned || aggro.currentTarget == null){
+				Debug.Log("No enemy or no crew");
 				yield return null;
 			}
 			EnemyStats estats = aggro.currentTarget.GetComponent<EnemyStats>();
