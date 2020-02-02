@@ -12,12 +12,19 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	public int MouseButtonDrag = 0; // 0 = LMB, 1 = RMB
 	public string buildButton = "Fire1";
+    [SerializeField]
 	GameObject pointing = null;
+    [SerializeField]
 	Draggable dragging;
 	Action action = Action.IDLE;
 	BuildableObject toBuild;
 	Vector2 targetPos;
+    public int dontClick;
     // Update is called once per frame
+    void Start()
+    {
+        dontClick = LayerMask.GetMask("DropArea", "Tower");
+    }
     void Update()
     {		
 		if(Input.GetMouseButtonDown(MouseButtonDrag) && pointing != null){
@@ -31,6 +38,17 @@ public class MouseBehaviour : MonoBehaviour
 				action = Action.IDLE;
 			}
 		}
+        if (action == Action.DRAGGING && !Input.GetMouseButton(MouseButtonDrag))
+        {
+            if (Drop())
+            {
+                action = Action.IDLE;
+            }
+            else
+            {
+                Debug.Log("Can't drop");
+            }
+        }
     }
 	
 	bool Drag(Draggable target){
@@ -58,7 +76,12 @@ public class MouseBehaviour : MonoBehaviour
 	}
 	
 	public void PointedAtObject(GameObject thing){
-		if (thing != null && thing.layer != LayerMask.NameToLayer("DropArea")) {
+        if (thing == null)
+        {
+            pointing = thing;
+            return;
+        }
+		if (((1 << thing.layer) & dontClick) == 0) {
 			pointing = thing;
 			Debug.Log("Pointed at " + thing.name);
 		}
