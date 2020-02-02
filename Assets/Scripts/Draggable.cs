@@ -28,7 +28,7 @@ public class Draggable : MonoBehaviour
 		//Debug.Log("Aah");
 		dragged = false;
 		rb.isKinematic = false;
-		foreach (Collider2D c : colls){
+		foreach (Collider2D c in colls){
 			c.enabled = true;
 		}
 		return true;
@@ -38,7 +38,7 @@ public class Draggable : MonoBehaviour
 		//Debug.Log("Ooh");
 		dragged = true;
 		rb.isKinematic = true;
-		foreach (Collider2D c : colls){
+		foreach (Collider2D c in colls){
 			c.enabled = false;
 		}
 		return this;
@@ -53,6 +53,14 @@ public class Draggable : MonoBehaviour
 		//Debug.Log("No longer being pointed at");
 		Camera.main.GetComponent<MouseBehaviour>().PointedAtObject(null);
 	}
+
+    void OnDisable()
+    {
+        foreach(Collider2D c in colls)
+        {
+            c.enabled = false;
+        }
+    }
 	
 	public bool isDragged(){
 		return dragged;
