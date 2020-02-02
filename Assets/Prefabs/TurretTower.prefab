@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4838049779658744041}
   - component: {fileID: 2918223579431570719}
   - component: {fileID: 3554345923731692578}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: BarContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1637271432134542376}
   - component: {fileID: 7875624107177364295}
   - component: {fileID: 6641320875089911439}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ProgressBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,9 +258,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1633706095
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2011176535167265111, guid: d2c399610970884499be5a5d1da32fe8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -348,8 +348,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1633706095
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -901038614383194776, guid: d2c399610970884499be5a5d1da32fe8,
     type: 3}
@@ -419,10 +419,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.39}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.32, y: 0.78}
     newSize: {x: 0.53, y: 0.78}
     adaptiveTilingThreshold: 0.5
@@ -445,7 +445,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.39}
   serializedVersion: 2
   m_Radius: 2
 --- !u!114 &-8710863324586791946
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1931242525422168623}
   - component: {fileID: 3361514551549161744}
   - component: {fileID: 4894561921803258786}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: BarOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 4926988669476274872}
   - component: {fileID: 2436518197410738171}
   m_Layer: 13
-  m_Name: New Sprite
+  m_Name: Pop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -562,7 +562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8916388166946971235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 1}
+  m_LocalPosition: {x: 0.306, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9070640079069929738}
@@ -604,8 +604,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1633706095
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -8291422769979199433, guid: d2c399610970884499be5a5d1da32fe8,
     type: 3}
@@ -643,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9184188509366107097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.27, z: 0}
+  m_LocalPosition: {x: 0, y: 0.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9070640079069929738}

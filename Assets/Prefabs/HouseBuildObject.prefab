@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4264305780798102112}
   - component: {fileID: 4264305780798102127}
   - component: {fileID: 1433868268318907668}
-  - component: {fileID: 1433868268318907669}
   m_Layer: 0
   m_Name: HouseBuildObject
   m_TagString: Untagged
@@ -98,18 +97,12 @@ MonoBehaviour:
   realObjectPrefab: {fileID: 7159030568441032393, guid: c48666e64fea15e4b80f165bfa4cb8f1,
     type: 3}
   spriteRend: {fileID: 4264305780798102127}
-  followScript: {fileID: 1433868268318907669}
   goodPlacementColor: {r: 0.100138426, g: 1, b: 0, a: 0.5019608}
   badPlacementColor: {r: 1, g: 0, b: 0, a: 0.5019608}
---- !u!114 &1433868268318907669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4264305780798102124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4403007230c15df4cbf366f633fd771b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_requirements:
+  - m_resource: 1
+    m_cost: 20
+  - m_resource: 2
+    m_cost: 20
+  yOffset: 0
+  canPlace: 0
