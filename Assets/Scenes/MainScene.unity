@@ -2144,8 +2144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c060736280f984fa874894c742a777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBound: -4
-  rightBound: 4
+  leftBound: -8
+  rightBound: 8
   m_lowerBound: 0
   m_upperBound: 0
   m_scrollAreaWidth: 1
@@ -7015,7 +7015,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -988767499
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -21693,6 +21693,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1541921169387284332, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[0].m_stack.m_ui
@@ -21713,6 +21718,11 @@ PrefabInstance:
       propertyPath: m_entries.Array.data[3].m_stack.m_ui
       value: 
       objectReference: {fileID: 1706942651}
+    - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_entries.Array.data[2].m_stack.m_count
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413436, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21721,7 +21731,7 @@ PrefabInstance:
     - target: {fileID: 1840379494284413436, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.191
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413436, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
@@ -21772,6 +21782,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chapel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840379495403907787, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840379495403907787, guid: 959ee61a4b3014dc2acb7c5fee82367a,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 959ee61a4b3014dc2acb7c5fee82367a, type: 3}
