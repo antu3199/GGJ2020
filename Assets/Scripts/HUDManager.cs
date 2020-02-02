@@ -41,6 +41,8 @@ public class HUDManager : Singleton<HUDManager>
 
     public Text timerText;
 
+    public Chapel chapel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,8 +82,7 @@ public class HUDManager : Singleton<HUDManager>
         return;
       }
 
-      //TODO: if can buy a coin
-      // ...
+      chapel.tryMakeGold();
     }
 
     public void DisplayBuildWallTooltip() {
