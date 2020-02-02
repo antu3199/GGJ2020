@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
 
 	void Start() {
 		StartCoroutine(intermissionPhase());
+    UpdateTimer();
 	}
 
 	public int getTimer() {
@@ -72,10 +73,12 @@ public class GameManager : MonoBehaviour
 		while(m_countdown > 0) {
 			yield return new WaitForSeconds(1);
 			m_countdown--;
+      UpdateCountdown();
 		}
 
 		m_round++;
 		consumeBudget();
+    UpdateTimer();
 		StartCoroutine(mainPhase());
 	}
 
@@ -89,7 +92,16 @@ public class GameManager : MonoBehaviour
 		while(m_countdown > 0) {
 			yield return new WaitForSeconds(1);
 			m_countdown--;
+      UpdateTimer();
 		}
 		StartCoroutine(intermissionPhase());
 	}
+
+  private void UpdateTimer() {
+    HUDManager.Instance.timerText.text = "ROUND: " + getRound() + "    NEXT: " + getTimer(); 
+  }
+
+  private void UpdateCountdown() {
+    HUDManager.Instance.timerText.text = "ROUND: " + getRound() + "    NEXT: " + m_countdown; 
+  }
 }
