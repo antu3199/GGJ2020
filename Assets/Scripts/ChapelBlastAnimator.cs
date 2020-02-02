@@ -34,13 +34,6 @@ public class ChapelBlastAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.G)) {
-            isCharging = false;
-            explosionTimer = 0;
-            curTime = 0;
-            explosionRend.color = explosionColor;
-        }
         explCollider.enabled = !isCharging;
 
 
