@@ -38,6 +38,7 @@ public class BuildableObject : MonoBehaviour
 		mouse = Camera.main.GetComponent<MouseBehaviour>();
 		yOffset = spriteRend.bounds.extents.y;
 		xExtent = spriteRend.bounds.extents.x;
+        Debug.Log(yOffset);
     }
 
     // Update is called once per frame
@@ -81,7 +82,7 @@ public class BuildableObject : MonoBehaviour
 		return ray.point;
 	}
 	
-	bool checkSpace(Vector2 pos) {
+	bool CheckSpace(Vector2 pos) {
 		pos.x -= 2 * xExtent;
 		int towerMask = LayerMask.GetMask("Tower", "Unit", "Enemy", "DropArea");
 		RaycastHit2D ray = Physics2D.Raycast(pos, Vector2.right, xExtent * 2, towerMask);
@@ -95,10 +96,10 @@ public class BuildableObject : MonoBehaviour
 			canPlace = false;
 		}
 		else{					
-			newPos.y += yOffset;
+			//newPos.y += yOffset;
 			newPos.z = 0;
 			
-			if (checkSpace(newPos)){
+			if (CheckSpace(newPos)){
 				canPlace = true;
 			}
 			else {
