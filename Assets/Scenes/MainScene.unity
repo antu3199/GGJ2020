@@ -7152,13 +7152,13 @@ MonoBehaviour:
     m_cost: 100
   - m_enemy: {fileID: 7543792735115575254, guid: adfc7f811ae344f878c5f380470b84d6,
       type: 3}
-    m_cost: 200
+    m_cost: 300
   - m_enemy: {fileID: 4470971157446738313, guid: 10d0553172cb94094b85838431980d98,
       type: 3}
-    m_cost: 400
+    m_cost: 600
   - m_enemy: {fileID: 7388970156067284694, guid: 29931babe964143ebb7a1d29c098929c,
       type: 3}
-    m_cost: 1800
+    m_cost: 2200
   m_roundSeconds: 60
   m_intermissionSeconds: 30
   m_budgetMultiplier: 2
