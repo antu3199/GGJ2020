@@ -16,7 +16,9 @@ public class ResourceNode : DropArea {
     }
 
     public void AddGatherer(DraggableUnit unit) {
-        m_gatherers.Add(unit);
+        if(!m_gatherers.Contains(unit)) {
+            m_gatherers.Add(unit);
+        }
     }
     public void RemoveGatherer(DraggableUnit unit) {
         m_gatherers.Remove(unit);

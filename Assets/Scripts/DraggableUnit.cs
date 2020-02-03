@@ -62,6 +62,10 @@ public class DraggableUnit : Draggable {
 	}
 
 	private void UseDropArea(DropArea dropArea) {
+		if(isGathering()) {
+			return;
+		}
+
 		if (dropArea is ResourceNode) {
 			StartCoroutine(GatherNode(dropArea.GetComponent<ResourceNode>()));
 		} else if (dropArea is Chapel) {
@@ -102,7 +106,7 @@ public class DraggableUnit : Draggable {
                 gatherProgress += occupation.GetGatherSpeed() * Time.deltaTime;
                 int amount = (int) gatherProgress;
                 if (amount >= 1) {
-                        amount = node.Harvest(amount);
+                        amount = node.Harvest(1);
                         if (amount == 0) {
                             StopTask();
                             break;
