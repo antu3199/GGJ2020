@@ -104,5 +104,7 @@ MonoBehaviour:
     m_cost: 20
   - m_resource: 2
     m_cost: 20
+  - m_resource: 3
+    m_cost: 1
   yOffset: 0
   canPlace: 0

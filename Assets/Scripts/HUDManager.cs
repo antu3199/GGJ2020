@@ -11,9 +11,9 @@ public enum HUDState {
 
 public class HUDManager : Singleton<HUDManager>
 {
-    string tooltipCreateWall = "Create a wall (Cost: 15 ore)";
-    string tooltipCreateTurret = "Create a turret (Cost: 30 ore, 10 wood, 10 wheat)";
-    string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat)";
+    string tooltipCreateWall = "Create a wall (Cost: 10 ore)";
+    string tooltipCreateTurret = "Create a turret (Cost: 10 ore, 10 wood, 5 wheat, 1 gold)";
+    string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat, 1 gold)";
 
     string tooltipBuild = "Place the structure";
     string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
@@ -57,11 +57,18 @@ public class HUDManager : Singleton<HUDManager>
 		if (hudState != HUDState.BASE) {
         return;
       }
+        
+        BuildableObject planner = Instantiate(obj) as BuildableObject; // Will position itself automatically
+        Debug.Log(obj.m_costToBuild.ToString());
+      if (!SummonerInventory.Instance.checkResourcesAvailable(planner.m_costToBuild))
+        {
+            Destroy(planner.gameObject);
+            return;
+        }
 
-      hudState = HUDState.BUILD;
-      BuildableObject planner = Instantiate(obj) as BuildableObject; // Will position itself automatically
-	  if (!mouse.BeginBuild(planner)){
-		  Destroy(planner);
+        hudState = HUDState.BUILD;
+        if (!mouse.BeginBuild(planner)){
+		  Destroy(planner.gameObject);
 		  ResetHUDState();
 		  return;
 	  }

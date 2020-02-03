@@ -22,7 +22,7 @@ public class TowerGarrison : Garrison
 	}
 	
 	public int GetTotalAttack(int attack){
-		attack += units.Count;
+		attack += units.Count * 3;
 		return attack;
 	}
 }

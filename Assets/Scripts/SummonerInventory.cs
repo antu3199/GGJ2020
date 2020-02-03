@@ -53,11 +53,8 @@ public class SummonerInventory : Singleton<SummonerInventory> {
 	}
 
 	public bool tryConsumeResources(Dictionary<Resource, int> requirements) {
-		foreach(KeyValuePair<Resource, int> resource in requirements) {
-			if(!m_resources.ContainsKey(resource.Key) || m_resources[resource.Key].m_count < resource.Value) {
-				return false;
-			}
-		}
+        if (!checkResourcesAvailable(requirements))
+            return false;
 
 		foreach(KeyValuePair<Resource, int> resource in requirements) {
 			updateResource(resource.Key, -1*resource.Value);
@@ -69,4 +66,16 @@ public class SummonerInventory : Singleton<SummonerInventory> {
 	public void addResource(Resource resource, int amount) {
 		updateResource(resource, amount);
 	}
+
+    public bool checkResourcesAvailable(Dictionary<Resource, int> reqs)
+    {
+        foreach (KeyValuePair<Resource, int> resource in reqs)
+        {
+            if (!m_resources.ContainsKey(resource.Key) || m_resources[resource.Key].m_count < resource.Value)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }

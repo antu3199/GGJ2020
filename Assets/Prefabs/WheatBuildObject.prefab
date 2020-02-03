@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb6072835390224ebcd8a367a4947cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realObjectPrefab: {fileID: 7159030568441032393, guid: 9e46395c25ebc33418f976a40a6285b1,
+  realObjectPrefab: {fileID: 3330423780654055252, guid: 3d41ae65e00364753b03863985fcfede,
     type: 3}
   spriteRend: {fileID: 4264305780798102127}
   goodPlacementColor: {r: 0.100138426, g: 1, b: 0, a: 0.5019608}

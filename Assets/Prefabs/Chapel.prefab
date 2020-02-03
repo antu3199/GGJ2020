@@ -218,11 +218,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_costForGold:
   - m_resource: 0
-    m_cost: 30
+    m_cost: 5
   - m_resource: 1
-    m_cost: 30
+    m_cost: 5
   - m_resource: 2
-    m_cost: 30
+    m_cost: 5
   m_victoryGoldAmount: 100
   spriteRend: {fileID: 1840379494284413439}
   sprites:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b546facf7207749dca44fc40af834df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_chapel: {fileID: 0}
+  m_chapel: {fileID: 1840379494284413432}
   m_entries:
   - m_resource: 2
     m_stack:
@@ -476,7 +476,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5039419}
+  m_Offset: {x: 0, y: 0.29}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -501,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e474228f293a4d5abff6e67593c5f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_totalHp: 1000
-  m_currentHp: 1000
+  m_totalHp: 200
+  m_currentHp: 200
   m_delayDestroy: 1
   takeDamageSound: 
   takeDamageSoundVolume: -1
@@ -535,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875103895002577396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1840379494284413436}

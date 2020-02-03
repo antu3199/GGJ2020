@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	public int getBudget() {
-		return m_round * m_round * 1000 * m_budgetMultiplier;
+		return m_round * 100 * m_budgetMultiplier;
 	}
 
 	public void consumeBudget() {

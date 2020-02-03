@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ea07d1cd53fe146a485b34338b89cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 1
-  cd: 2
+  attack: 5
+  cd: 1
   attackEffectTime: 0.1
   manned: 0
 --- !u!114 &-4709875303530363828
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_totalHp: 100
   m_currentHp: 100
   m_delayDestroy: 0
+  takeDamageSound: 
+  takeDamageSoundVolume: -1
   m_progressBar: {fileID: 6641320875089911439}
 --- !u!1 &7254892524914163503
 GameObject:
