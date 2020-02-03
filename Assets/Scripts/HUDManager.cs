@@ -16,7 +16,7 @@ public class HUDManager : Singleton<HUDManager>
     string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat, 1 gold)";
 
     string tooltipBuild = "Place the structure";
-    string tooltipCoin = "Exchange resources for a coin (Cost: 30 ore, 30 wood, 30 wheat";
+    string tooltipCoin = "Exchange resources for a coin (Cost: 5 ore, 5 wood, 5 wheat";
 
     string tooltipWheat = "Create a wheat (Cost: 10 wheat)";
     string tooltipOre = "Create a ore (Cost: 10 ore)";
