@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 5
-  cd: 1
+  cd: 2
   attackEffectTime: 0.1
   manned: 0
 --- !u!114 &-4709875303530363828

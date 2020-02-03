@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_attackDamage: 10
+  m_attackDamage: 20
   m_attackDelay: 1
   m_attackable: {fileID: 0}
 --- !u!114 &7388970156067284697
@@ -184,6 +184,8 @@ MonoBehaviour:
   m_totalHp: 500
   m_currentHp: 500
   m_delayDestroy: 1
+  takeDamageSound: 
+  takeDamageSoundVolume: -1
 --- !u!114 &7388970156067284696
 MonoBehaviour:
   m_ObjectHideFlags: 0
