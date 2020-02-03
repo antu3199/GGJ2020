@@ -11,9 +11,9 @@ public enum HUDState {
 
 public class HUDManager : Singleton<HUDManager>
 {
-    string tooltipCreateWall = "Create a wall (Cost: 10 ore)";
-    string tooltipCreateTurret = "Create a turret (Cost: 10 ore, 10 wood, 5 wheat, 1 gold)";
-    string tooltipHouse = "Create a house (Cost: 20 wood, 20 wheat, 1 gold)";
+    string tooltipCreateWall = "Create a wall (Cost: 8 ore)";
+    string tooltipCreateTurret = "Create a turret (Cost: 10 ore, 5 wood, 5 wheat, 1 gold)";
+    string tooltipHouse = "Create a house (Cost: 15 wood, 15 wheat, 1 gold)";
 
     string tooltipBuild = "Place the structure";
     string tooltipCoin = "Exchange resources for a coin (Cost: 5 ore, 5 wood, 5 wheat";
@@ -43,6 +43,7 @@ public class HUDManager : Singleton<HUDManager>
 
     public Chapel chapel;
     public Text winText;
+    public Text loseText;
 
 
     // Start is called before the first frame update

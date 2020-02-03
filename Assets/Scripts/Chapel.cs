@@ -20,10 +20,17 @@ public class Chapel : DropArea {
     public int m_victoryGoldAmount = 1000;
     public SpriteRenderer spriteRend;
     public List<Sprite> sprites;
+    public BuildingStats m_stats;
 
     void Awake() {
         foreach(Material material in m_costForGold) {
             m_goldMaterials.Add(material.m_resource, material.m_cost);
+        }
+    }
+
+    void Update() {
+        if(m_stats.getHp() == 0) {
+            LoseGame();
         }
     }
 
@@ -45,12 +52,22 @@ public class Chapel : DropArea {
     }
 
     private void WinGame() {
-        Debug.Log("Game Won");
         StartCoroutine(winGameCor());
+    }
+
+    private void LoseGame() {
+        StartCoroutine(loseGameCor());   
     }
 
     IEnumerator winGameCor() {
       HUDManager.Instance.winText.gameObject.SetActive(true);
+
+      yield return new WaitForSeconds(5.0f);
+      SceneManager.LoadScene("_MainMenu");
+    }
+
+    IEnumerator loseGameCor() {
+      HUDManager.Instance.loseText.gameObject.SetActive(true);
 
       yield return new WaitForSeconds(5.0f);
       SceneManager.LoadScene("_MainMenu");

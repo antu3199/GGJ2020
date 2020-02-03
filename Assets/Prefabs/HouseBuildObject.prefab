@@ -101,9 +101,9 @@ MonoBehaviour:
   badPlacementColor: {r: 1, g: 0, b: 0, a: 0.5019608}
   m_requirements:
   - m_resource: 1
-    m_cost: 20
+    m_cost: 15
   - m_resource: 2
-    m_cost: 20
+    m_cost: 15
   - m_resource: 3
     m_cost: 1
   yOffset: 0
