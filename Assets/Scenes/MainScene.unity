@@ -21857,22 +21857,22 @@ PrefabInstance:
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[0].m_stack.m_count
-      value: 100000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[1].m_stack.m_count
-      value: 1000000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[2].m_stack.m_count
-      value: 100000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413435, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
       propertyPath: m_entries.Array.data[3].m_stack.m_count
-      value: 10000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1840379494284413436, guid: 959ee61a4b3014dc2acb7c5fee82367a,
         type: 3}
