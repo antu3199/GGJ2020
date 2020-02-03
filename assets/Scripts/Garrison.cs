@@ -14,7 +14,7 @@ public class Garrison : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.layer == LayerMask.NameToLayer("Unit")){
 			DraggableUnit incoming = other.gameObject.GetComponent<DraggableUnit>();
-			if(!incoming.isDragged()){
+			if(transform.position.y < other.transform.position.y && !incoming.isDragged()){
 				units.Add(incoming);
 				//incoming.gameObject.SetActive(false);
 			}

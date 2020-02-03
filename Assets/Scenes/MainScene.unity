@@ -7032,8 +7032,8 @@ MonoBehaviour:
       type: 3}
     m_cost: 2500
   m_roundSeconds: 60
-  m_intermissionSeconds: 30
-  m_budgetMultiplier: 1
+  m_intermissionSeconds: 20
+  m_budgetMultiplier: 2
 --- !u!4 &1151069775
 Transform:
   m_ObjectHideFlags: 0
