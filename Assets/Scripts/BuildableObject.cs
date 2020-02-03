@@ -45,7 +45,7 @@ public class BuildableObject : MonoBehaviour
     void Update()
     {		
 		UpdatePosition();
-        if (canPlace) {
+        if (canPlace && transform.position.y > -1) {
 			spriteRend.color = goodPlacementColor;
 			if (Input.GetMouseButtonDown(0)) {
 				OnClickObject();
@@ -85,7 +85,7 @@ public class BuildableObject : MonoBehaviour
 	
 	bool CheckSpace(Vector2 pos) {
 		pos.x -= 2 * xExtent;
-		int towerMask = LayerMask.GetMask("Tower", "Unit", "Enemy", "DropArea");
+		int towerMask = LayerMask.GetMask("Tower", "Unit", "Enemy", "Drop Area", "House");
 		RaycastHit2D ray = Physics2D.Raycast(pos, Vector2.right, xExtent * 2, towerMask);
 		return ray.collider == null;
 	}

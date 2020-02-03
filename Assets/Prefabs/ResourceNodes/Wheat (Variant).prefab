@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1417131724457467145, guid: c969020d0a1426f4387114da43e13071,
         type: 3}
@@ -86,6 +86,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheat (Variant)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1417131724457467150, guid: c969020d0a1426f4387114da43e13071,
+        type: 3}
+      propertyPath: m_startQuantity
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1417131724457467151, guid: c969020d0a1426f4387114da43e13071,
         type: 3}

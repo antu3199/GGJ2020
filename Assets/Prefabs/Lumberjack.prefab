@@ -435,6 +435,8 @@ MonoBehaviour:
   m_totalHp: 20
   m_currentHp: 20
   m_delayDestroy: 1
+  takeDamageSound: 
+  takeDamageSoundVolume: -1
 --- !u!114 &6013281031639308369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0187407d55174463f822cde6d2f6da75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_resourceLimit: 5
+  m_resourceLimit: 10
 --- !u!114 &6013281031639308363
 MonoBehaviour:
   m_ObjectHideFlags: 0

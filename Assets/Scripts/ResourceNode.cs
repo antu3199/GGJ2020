@@ -44,6 +44,7 @@ public class ResourceNode : DropArea {
         for (int i = m_gatherers.Count - 1; i >= 0; i--) {
             m_gatherers[i].StopTask();
         }
-        Destroy(gameObject, m_removeDelay);
+        if (gameObject)
+            Destroy(gameObject, m_removeDelay);
     }
 }

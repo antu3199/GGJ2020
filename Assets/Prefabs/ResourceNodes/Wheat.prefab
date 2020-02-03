@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 1417131724457467150, guid: c969020d0a1426f4387114da43e13071,
         type: 3}
       propertyPath: m_startQuantity
-      value: 20
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1417131724457467150, guid: c969020d0a1426f4387114da43e13071,
         type: 3}
