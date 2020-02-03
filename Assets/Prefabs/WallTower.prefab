@@ -439,7 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e474228f293a4d5abff6e67593c5f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_totalHp: 300
-  m_currentHp: 300
+  m_totalHp: 150
+  m_currentHp: 150
   m_delayDestroy: 1
+  takeDamageSound: 
+  takeDamageSoundVolume: -1
   m_progressBar: {fileID: 1961253939}

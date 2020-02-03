@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e474228f293a4d5abff6e67593c5f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_totalHp: 100
-  m_currentHp: 100
+  m_totalHp: 60
+  m_currentHp: 60
   m_delayDestroy: 1
   takeDamageSound: 
   takeDamageSoundVolume: -1
