@@ -33,14 +33,17 @@ public class CameraControl : MonoBehaviour {
 			newPos += Vector3.right * m_scrollSpeed * Time.deltaTime;
 		}
 
-    if (Input.GetKeyDown(KeyCode.A)) {
-      newPos.x -= 2.5f;
-    } else if (Input.GetKeyDown(KeyCode.D)) {
-      newPos.x += 2.5f;
-    }
+		if (Input.GetKeyDown(KeyCode.A)) {
+			newPos.x -= 2.5f;
+		} else if (Input.GetKeyDown(KeyCode.D)) {
+			newPos.x += 2.5f;
+		}
+		else if(Input.GetKeyDown(KeyCode.Space)) {
+			newPos.x = 0f;
+		}
 
-    newPos.x = Mathf.Max(newPos.x, leftBound);
-    newPos.x = Mathf.Min(newPos.x, rightBound);
+		newPos.x = Mathf.Max(newPos.x, leftBound);
+		newPos.x = Mathf.Min(newPos.x, rightBound);
 
 		// Y-axis movement
 		if (mousePos.y <= m_scrollAreaWidth) {
